@@ -2,14 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamBurger = document.querySelector(".toggle-btn");
     const formularioPrueba = document.querySelector('#contenedorPrueba');
     const formularioDeportista = document.querySelector('#contenedorDeportistas');
-<<<<<<< HEAD
     const formularioCategoria = document.querySelector('#contenedorCategoria');
-=======
     const formularioClub = document.querySelector('#contenedorClubes');
     const formularioRanking = document.querySelector('#contenedorRanking');
 
     
->>>>>>> 66abab64bf1aea4b6774710598770b8d603f5ec1
     let listaPruebas = [];
     let listaCategorias = [];
 
@@ -21,12 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Ocultar todos los formularios
         formularioPrueba.style.display = 'none';
         formularioDeportista.style.display = 'none';
-<<<<<<< HEAD
         formularioCategoria.style.display = 'none'
-=======
         formularioClub.style.display= 'none';
 
->>>>>>> 66abab64bf1aea4b6774710598770b8d603f5ec1
         // Mostrar el formulario deseado
         formulario.style.display = 'block';
     }
