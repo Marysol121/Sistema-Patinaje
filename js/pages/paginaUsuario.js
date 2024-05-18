@@ -2,6 +2,7 @@ import { crearEventos } from '../components/eventos/componentesEventos.js';
 import { crearFootterUsuario } from '../components/footer/footerUsuario.js';
 import { crearNavUsuario } from '../components/nav/navUsuario.js';
 import { crearNoticias } from '../components/noticias/componentesNoticias.js';
+import { crearTienda } from '../components/inicio/componentesTienda.js';
 
 
 export function cargarPagina(){
