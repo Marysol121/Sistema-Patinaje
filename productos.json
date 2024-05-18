@@ -1,0 +1,282 @@
+[
+  {
+    "nombre": "Patines para Niños",
+    "descripcion": "Patines Ajustables para niños - Patines de deportes al aire libre para niños y niñas - Patines ajustables en línea - Trazador para niños - Ruedas iluminadoras.",
+    "precio": 35.99,
+    "stock": 10,
+    "imagen": "https://madrid.clubtres60.com/wp-content/uploads/2014/03/Patin-Infantil_Club-Tres60.jpg",
+    "talla_disponible": true,
+    "talla": ["28", "30"],
+    "etiquetas": ["ninoCalzado"]
+  },
+  {
+    "nombre": "Patines para Niñas",
+    "descripcion": "Patines Ajustables para niñas - Patines de deportes al aire libre para niñas - Patines ajustables en línea - Trazador para niñas - Ruedas iluminadoras.",
+    "precio": 35.99,
+    "stock": 10,
+    "imagen": "https://m.media-amazon.com/images/I/71A59+PwkML._AC_SL1200_.jpg",
+    "talla_disponible": true,
+    "talla": ["28", "30"],
+    "etiquetas": ["ninoCalzado"]
+  },
+  {
+    "nombre": "Zapatos de Fútbol Lotto",
+    "descripcion": "Desafía a tus oponentes mostrando tus zapatos de fútbol Lotto. Con un diseño clásico, este calzado de fútbol garantiza agilidad y velocidad.",
+    "precio": 79.99,
+    "stock": 5,
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_712908-MEC69580927074_052023-O.webp",
+    "talla_disponible": true,
+    "talla": ["M", "L", "XL"],
+    "etiquetas": ["ninoCalzado"]
+  },
+  {
+    "nombre": "Zapatillas Deportivas Juveniles",
+    "descripcion": "Zapatillas ligeras y cómodas para actividades deportivas. Diseñadas para brindar soporte y estilo.",
+    "precio": 49.99,
+    "stock": 12,
+    "imagen": "https://hmecuador.vtexassets.com/arquivos/ids/1531972/Zapatillas-deportivas---Azul-marino-Blanco---H-M-EC.jpg?v=638423325021530000",
+    "talla_disponible": true,
+    "talla": ["32", "34", "36"],
+    "etiquetas": ["ninoCalzado"]
+  },
+  {
+    "nombre": "Sandalias de Verano para Niños",
+    "descripcion": "Sandalias frescas y cómodas para el verano, ideales para actividades al aire libre.",
+    "precio": 19.99,
+    "stock": 15,
+    "imagen": "https://www.paredes.es/10703-large_default/sandalias-trekking-saona-azul.jpg",
+    "talla_disponible": true,
+    "talla": ["28", "30", "32"],
+    "etiquetas": ["ninoCalzado"]
+  },
+  {
+    "nombre": "Equipo de Protección Infantil",
+    "descripcion": "Set de protección para patinadores infantiles que incluye casco, rodilleras y coderas.",
+    "precio": 29.99,
+    "stock": 8,
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_752548-MLU74475258113_022024-O.webp",
+    "talla_disponible": false,
+    "talla": [],
+    "etiquetas": ["ninoAccesorios"]
+  },
+  {
+    "nombre": "Mochila Deportiva Infantil",
+    "descripcion": "Mochila ligera y resistente para llevar todo el equipo deportivo de los niños.",
+    "precio": 24.99,
+    "stock": 20,
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_879909-MLU74841480776_032024-O.webp",
+    "talla_disponible": false,
+    "talla": [],
+    "etiquetas": ["ninoAccesorios"]
+  },
+  {
+    "nombre": "Muñequeras Deportivas Infantiles",
+    "descripcion": "Muñequeras suaves y absorbentes para proteger las muñecas durante la práctica deportiva.",
+    "precio": 9.99,
+    "stock": 30,
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_709789-MEC42684980256_072020-O.webp",
+    "talla_disponible": false,
+    "talla": [],
+    "etiquetas": ["ninoAccesorios"]
+  },
+  {
+    "nombre": "Gafas de Sol Deportivas para Niños",
+    "descripcion": "Gafas de sol con protección UV para niños, ideales para actividades al aire libre.",
+    "precio": 14.99,
+    "stock": 25,
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_882584-MCO49409593260_032022-O.webp",
+    "talla_disponible": false,
+    "talla": [],
+    "etiquetas": ["ninoAccesorios"]
+  },
+  {
+    "nombre": "Guantes Deportivos para Niños",
+    "descripcion": "Guantes acolchados y cómodos para proteger las manos durante la práctica deportiva.",
+    "precio": 12.99,
+    "stock": 18,
+    "imagen": "https://i.ebayimg.com/thumbs/images/g/XpsAAOSwxN5kFFWa/s-l640.jpg",
+    "talla_disponible": true,
+    "talla": ["S", "M"],
+    "etiquetas": ["ninoAccesorios"]
+  },
+  {
+    "nombre": "Patines para Adultos",
+    "descripcion": "Patines profesionales para adultos, adecuados para competiciones.",
+    "precio": 79.99,
+    "stock": 5,
+    "imagen": "https://m.media-amazon.com/images/I/71W7FIrCFQL._AC_UF894,1000_QL80_.jpg",
+    "talla_disponible": true,
+    "talla": ["M", "L", "XL"],
+    "etiquetas": ["mujerRopaDeportiva", "mujerCalzado"]
+  },
+  {
+    "nombre": "Zapatillas Running Mujer",
+    "descripcion": "Zapatillas ligeras y cómodas para correr, diseñadas específicamente para mujeres.",
+    "precio": 59.99,
+    "stock": 7,
+    "imagen": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1681380483-zapatillas-running-mujer-kiprun-ks900-light-rojo-coral.jpg?crop=0.769xw:0.513xh;0.143xw,0.345xh&resize=980:*",
+    "talla_disponible": true,
+    "talla": ["36", "38", "40"],
+    "etiquetas": ["mujerRopaDeportiva", "mujerCalzado"]
+  },
+  {
+    "nombre": "Camiseta Deportiva Mujer",
+    "descripcion": "Camiseta transpirable y ligera, ideal para todo tipo de actividad deportiva.",
+    "precio": 25.99,
+    "stock": 10,
+    "imagen": "https://img.freepik.com/vector-premium/camiseta-deportiva-mujer-camiseta-futbol-club-futbol_32088-22.jpg",
+    "talla_disponible": true,
+    "talla": ["S", "M", "L"],
+    "etiquetas": ["mujerRopaDeportiva"]
+  },
+  {
+    "nombre": "Shorts Deportivos Mujer",
+    "descripcion": "Shorts cómodos y elásticos, perfectos para entrenar o hacer ejercicio al aire libre.",
+    "precio": 22.99,
+    "stock": 12,
+    "imagen": "https://example.com/shorts_deportivos_mujer.jpg",
+    "talla_disponible": true,
+    "talla": ["S", "M", "L"],
+    "etiquetas": ["mujerRopaDeportiva"]
+  },
+  {
+    "nombre": "Zapatos de Entrenamiento Mujer",
+    "descripcion": "Zapatos de entrenamiento con excelente soporte y comodidad, diseñados para mujeres.",
+    "precio": 65.99,
+    "stock": 9,
+    "imagen": "https://i.pinimg.com/originals/f7/dc/b0/f7dcb0b18626afb664e67a14ec027ac8.jpg",
+    "talla_disponible": true,
+    "talla": ["36", "38", "40"],
+    "etiquetas": ["mujerCalzado"]
+  },
+  {
+    "nombre": "Equipo de Protección Adulto",
+    "descripcion": "Set de protección para patinadores adultos que incluye casco, rodilleras y coderas.",
+    "precio": 29.99,
+    "stock": 8,
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_701003-MLU74523082439_022024-O.webp",
+    "talla_disponible": false,
+    "talla": [],
+    "etiquetas": ["hombreAccesorios", "mujerAccesorios"]
+  },
+  {
+    "nombre": "Guantes de Ciclismo Hombre",
+    "descripcion": "Guantes acolchados y transpirables para ciclismo, diseñados para hombres.",
+    "precio": 19.99,
+    "stock": 14,
+    "imagen": "https://megabikestore.ec/wp-content/uploads/2022/11/guantes-para-bicicleta-ciclismo-gw-reflective-dedo-corto-distribuidor-gw-ecuador-mega-bike-store-815776-5.jpg",
+    "talla_disponible": true,
+    "talla": ["M", "L"],
+    "etiquetas": ["hombreAccesorios"]
+  },
+  {
+    "nombre": "Cinturón de Hidratación Hombre",
+    "descripcion": "Cinturón práctico y cómodo para llevar agua y otros esenciales durante carreras largas.",
+    "precio": 27.99,
+    "stock": 11,
+    "imagen": "https://m.media-amazon.com/images/I/71N2VYlU9tL._AC_SL1500_.jpg",
+    "talla_disponible": false,
+    "talla": [],
+    "etiquetas": ["hombreAccesorios"]
+  },
+  {
+    "nombre": "Gorra Deportiva Hombre",
+    "descripcion": "Gorra ligera y transpirable, ideal para correr o hacer deporte al aire libre.",
+    "precio": 15.99,
+    "stock": 20,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9tpejsDRnh5-uTnDpQC1u2dLCHTpNeP_CTQW0oKZxvg&s",
+    "talla_disponible": false,
+    "talla": [],
+    "etiquetas": ["hombreAccesorios"]
+  },
+  {
+    "nombre": "Calcetines Deportivos Hombre",
+    "descripcion": "Calcetines cómodos y transpirables, diseñados para soportar actividades intensas.",
+    "precio": 9.99,
+    "stock": 25,
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_644232-MEC52339988270_112022-O.webp",
+    "talla_disponible": true,
+    "talla": ["M", "L"],
+    "etiquetas": ["hombreAccesorios"]
+  },
+  {
+    "nombre": "Camiseta Running Hombre",
+    "descripcion": "Camiseta ligera y transpirable para correr, diseñada específicamente para hombres.",
+    "precio": 25.99,
+    "stock": 15,
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_639265-MEC72209345757_102023-O.webp",
+    "talla_disponible": true,
+    "talla": ["M", "L", "XL"],
+    "etiquetas": ["hombreRopaDeportiva"]
+  },
+  {
+    "nombre": "Shorts de Entrenamiento Hombre",
+    "descripcion": "Shorts elásticos y cómodos para entrenamientos intensos, diseñados para hombres.",
+    "precio": 22.99,
+    "stock": 18,
+    "imagen": "https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/493949b2557c466db429af1c0100ce9e_9366/shorts-de-entrenamiento-designed-for-movement-hiit.jpg",
+    "talla_disponible": true,
+    "talla": ["M", "L", "XL"],
+    "etiquetas": ["hombreRopaDeportiva"]
+  },
+  {
+    "nombre": "Chaqueta Deportiva Hombre",
+    "descripcion": "Chaqueta ligera y cortavientos, ideal para correr o hacer deporte en exteriores.",
+    "precio": 49.99,
+    "stock": 10,
+    "imagen": "https://www.lapolar.cl/dw/image/v2/BCPP_PRD/on/demandware.static/-/Sites-master-catalog/default/dwce34b6fe/images/large/527462-negro.jpg?sw=1200&sh=1200&sm=fit",
+    "talla_disponible": true,
+    "talla": ["M", "L", "XL"],
+    "etiquetas": ["hombreRopaDeportiva"]
+  },
+  {
+    "nombre": "Pantalones de Compresión Hombre",
+    "descripcion": "Pantalones de compresión que brindan soporte y mejoran el rendimiento deportivo.",
+    "precio": 29.99,
+    "stock": 12,
+    "imagen": "https://m.media-amazon.com/images/I/61ZR7y63d2L._AC_UY1000_.jpg",
+    "talla_disponible": true,
+    "talla": ["M", "L", "XL"],
+    "etiquetas": ["hombreRopaDeportiva"]
+  },
+  {
+    "nombre": "Zapatillas de Trail Hombre",
+    "descripcion": "Zapatillas resistentes y cómodas para correr en senderos y terrenos difíciles.",
+    "precio": 69.99,
+    "stock": 6,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv2zF4Czv96n9wHsoOw08Y8XaVoL_pgZxPfluw5Y-RDw&s",
+    "talla_disponible": true,
+    "talla": ["42", "44", "46"],
+    "etiquetas": ["hombreCalzado"]
+  },
+  {
+    "nombre": "Botas de Montaña Hombre",
+    "descripcion": "Botas robustas y duraderas, diseñadas para proporcionar soporte en caminatas largas.",
+    "precio": 89.99,
+    "stock": 4,
+    "imagen": "https://paylessec.vtexassets.com/arquivos/ids/376320-450-450?v=638095281518630000&width=450&height=450&aspect=true",
+    "talla_disponible": true,
+    "talla": ["42", "44", "46"],
+    "etiquetas": ["hombreCalzado"]
+  },
+  {
+    "nombre": "Zapatillas de Entrenamiento Hombre",
+    "descripcion": "Zapatillas con excelente amortiguación y soporte, ideales para entrenamientos diarios.",
+    "precio": 59.99,
+    "stock": 8,
+    "imagen": "https://thenorthfaceec.vteximg.com.br/arquivos/ids/184628-861-1000/NF0A4T2U0Z1_1.jpg?v=638031898471770000",
+    "talla_disponible": true,
+    "talla": ["42", "44", "46"],
+    "etiquetas": ["hombreCalzado"]
+  },
+  {
+    "nombre": "Sandalias Deportivas Hombre",
+    "descripcion": "Sandalias ligeras y cómodas, perfectas para actividades al aire libre en verano.",
+    "precio": 29.99,
+    "stock": 12,
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG-OjyMVdZl4Es07qVZJjQ20NinX46aO1I_Oa4pK0GDQ&s",
+    "talla_disponible": true,
+    "talla": ["42", "44", "46"],
+    "etiquetas": ["hombreCalzado"]
+  }
+]
