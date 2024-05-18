@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const formularioCategoria = document.querySelector('#contenedorCategoria');
     const formularioClub = document.querySelector('#contenedorClubes');
     const formularioRanking = document.querySelector('#contenedorRanking');
+    const formularioEvento = document.querySelector('#contenedorEvento');
+    const formularioEtapa = document.querySelector('#contenedorEtapa');
 
     
     let listaPruebas = [];
@@ -20,18 +22,19 @@ document.addEventListener('DOMContentLoaded', function() {
         formularioDeportista.style.display = 'none';
         formularioCategoria.style.display = 'none'
         formularioClub.style.display= 'none';
+        formularioRanking.style.display= 'none';
+        formularioEvento.style.display= 'none';
+        formularioEtapa.style.display = 'none';
 
         // Mostrar el formulario deseado
         formulario.style.display = 'block';
     }
 
     function agregarPrueba() {
-        const id = document.getElementById('pruebaInput').value;
         const nombre = document.getElementById('nombrePruebaInput').value;
         const descripcion = document.getElementById('descripcionPruebaInput').value;
 
         const nuevaPrueba = {
-            id: id,
             nombre: nombre,
             descripcion: descripcion
         };
@@ -42,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function agregarCategoria() {
-        const id = document.getElementById('categoriaIDInput').value;
         const nombre = document.getElementById('nombreCategoriaInput').value;
         const descripcion = document.getElementById('descripcionCategoriaInput').value;
         const fecha = document.getElementById('fechaInicioInput').value;
@@ -50,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const sexo = document.getElementById('sexoInput').value;
 
         const nuevaCategoria = {
-            id: id,
             nombre: nombre,
             descripcion: descripcion,
             fecha: fecha,
@@ -70,15 +71,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const fila = document.createElement('tr');
             fila.innerHTML = `
                 <td>${index + 1}</td>
-                <td>${prueba.id}</td>
                 <td>${prueba.nombre}</td>
                 <td>${prueba.descripcion}</td>
                 <td>
                     <a href="#editPrueba" class="edit" style="color: black">
-                        <i class="bi bi-pencil-square bi-3x"></i>
+                        <i class="bi bi-pencil-square bi-4x"></i>
                     </a>
                     <a href="#deletePrueba" class="delete" style="color: black">
-                        <i class="bi bi-file-earmark-x bi-3x"></i>
+                        <i class="bi bi-file-earmark-x bi-4x"></i>
                     </a>
                 </td>
             `;
@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const fila = document.createElement('tr');
             fila.innerHTML = `
                 <td>${index + 1}</td>
-                <td>${categoria.id}</td>
                 <td>${categoria.nombre}</td>
                 <td>${categoria.descripcion}</td>
                 <td>${categoria.fecha}</td>
@@ -101,10 +100,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 <td>${categoria.sexo}</td>
                 <td>
                     <a href="#editCategoria" class="edit" style="color: black">
-                        <i class="bi bi-pencil-square bi-3x"></i>
+                        <i class="bi bi-pencil-square bi-4x"></i>
                     </a>
                     <a href="#deleteCategoria" class="delete" style="color: black">
-                        <i class="bi bi-file-earmark-x bi-3x"></i>
+                        <i class="bi bi-file-earmark-x bi-4x"></i>
                     </a>
                 </td>
             `;
@@ -140,6 +139,19 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         mostrarFormulario(formularioCategoria);
     });
+
+    // Event listener para el enlace de etapas
+    document.querySelector('.sidebar-item a[href="#etapas"]').addEventListener('click', function(event) {
+        event.preventDefault();
+        mostrarFormulario(formularioEtapa);
+    });
+
+    // Event listener para el enlace de eventos
+    document.querySelector('.sidebar-item a[href="#eventos"]').addEventListener('click', function(event) {
+        event.preventDefault();
+        mostrarFormulario(formularioEvento);
+    });
+
 
     // Manejo del botón cancelar en el formulario de deportistas
     const cancelarFormularioDeportistaBtn = formularioDeportista.querySelector("#cancelarFormulario");
