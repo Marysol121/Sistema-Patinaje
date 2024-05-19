@@ -9,6 +9,7 @@
 <body>
     <div class="contenedor-login">
         <div class="formulario-login">
+            <div> <img id="imgLogo" src='../img/logoPatinaje.png'></div>
             <h2>Iniciar Sesión</h2>
             <form id="formularioInicioSesion">
                 <div class="grupo-input">
@@ -17,7 +18,12 @@
                 </div>
                 <div class="grupo-input">
                     <label for="contrasena">Contraseña</label>
-                    <input type="password" id="contrasena" required>
+                    <div class="contenedor-password">
+                        <input type="password" id="contrasena" required>
+                        <span class="icono-ojo" id="togglePassword">
+                            &#128065; <!--codigo que representa el ojo del password-->
+                        </span>
+                    </div>
                 </div>
                 <button type="submit">Ingresar</button>
                 <p class="mensaje-error" id="mensajeError"></p>

@@ -30,7 +30,7 @@ export function mostrarCarrito() {
     });
 
     // Mostrar el total del carrito
-    const totalCarrito = carrito.reduce((total, producto) => total + producto.precio, 0);
+    const totalCarrito = carrito.reduce((total, producto) => total + producto.precio, 0).toFixed(2);
     const totalDiv = document.createElement('div');
     totalDiv.classList.add('total-carrito');
     totalDiv.innerHTML = `<h3 class="labelTotal">Total: $${totalCarrito}</h3>`;

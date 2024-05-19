@@ -2,7 +2,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: url('../img/loginFondo.jpg') no-repeat center center fixed; 
+    background: url('../img/2fondo.jpg') no-repeat center center fixed; 
     background-size:cover;
     /*background: linear-gradient(to right, #ff9966, #ff5e62);*/
     display: flex;
@@ -11,20 +11,24 @@ body {
     height: 100vh;
     margin: 0;
 }
-
 .contenedor-login {
     background: rgba(255, 255, 255, 0.9);
     padding: 20px 40px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 40%;
+    width: 50%;
+}
+#imgLogo{
+    width: 90px; 
+    height: 70px;
 }
 
 h2 {
+    margin-top: 0;
     margin-bottom: 20px;
     color: #333;
-    font-size: 50px;
+    font-size: 30px;
 }
 
 .grupo-input {
@@ -42,11 +46,23 @@ label {
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #c4c2c2;
     border-radius: 10px;
     box-sizing: border-box;
     font-size: 20px;
+    
+}
+.contenedor-password {
+    position: relative;
+}
+
+.icono-ojo {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+
 }
 
 button {
@@ -61,7 +77,7 @@ button {
 }
 
 button:hover {
-    background-color: #b9250b;
+    background-color: #8b1f0c;
     font-weight: bold;
 }
 
@@ -71,8 +87,24 @@ button:hover {
     display: none;
 }
 
-@media (min-width: 600px) {
+/* Estilos adicionales para diferentes tamaños de pantalla */
+@media only screen and (max-width: 1000px) {
     .contenedor-login {
-        padding: 40px 60px;
+        
+        width: 80%;
+        height: 70%;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .contenedor-login {
+        display:grid;
+        justify-content: center;
+        align-items: center;
+        padding: auto;
+        width: 100%;
+        height: 100%;
+    }
+    
+}
+
