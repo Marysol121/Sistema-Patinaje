@@ -1,7 +1,7 @@
 //ALt + 96
 
 
-import { cargarEventos, cargarInicio, cargarNoticias, cargarTienda } from "../../pages/paginaUsuario.js";
+import { cargarCarrito, cargarInicio, cargarNoticias, cargarTienda } from "../../pages/paginaUsuario.js";
 
 
 export function crearNavUsuario() {
@@ -17,7 +17,7 @@ export function crearNavUsuario() {
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav ms-auto mb-lg-0">
                     <li class="nav-item">
-                        <a class="link-light" href="#">Inicio Sesion/Registrarse</a>
+                        <a class="link-light" href="../paginas/login.html">Iniciar Sesión</a>
                     </li>
                     <li class="nav-item px-2">
                         <i class="bi bi-instagram fs-5 "></i>
@@ -61,9 +61,7 @@ export function crearNavUsuario() {
             <li class="nav-item  fs-4 ">
               <a class="nav-link active" href="#" id="linkTienda">Tienda</a>
             </li>
-            <li class="nav-item mx-2">
-              <i class="nav-link active bi bi-cart fs-4"  id="linkCarrito"></i>
-            </li>
+            
           </ul>
 
         </div>
