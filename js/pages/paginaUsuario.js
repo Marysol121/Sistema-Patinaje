@@ -2,7 +2,8 @@ import { crearEventos } from '../components/eventos/componentesEventos.js';
 import { crearFootterUsuario } from '../components/footer/footerUsuario.js';
 import { crearNavUsuario } from '../components/nav/navUsuario.js';
 import { crearNoticias } from '../components/noticias/componentesNoticias.js';
-import { crearTienda } from '../components/inicio/componentesTienda.js';
+import { crearTienda } from '../components/tienda/componentesTienda.js';
+import { crearCarrito} from '../components/tienda/componentesCarrito.js';
 
 
 export function cargarPagina(){
@@ -19,6 +20,10 @@ export function cargarInicio(){
 
 export function cargarTienda() {  
     crearTienda();
+}
+
+export function cargarCarrito() {  
+    crearCarrito();
 }
 
 export function cargarEventos(){
