@@ -1,3 +1,5 @@
+import { isValidDate, isValidEdad, isValidCedula } from '../js/validaciones.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     const hamBurger = document.querySelector(".toggle-btn");
     const formularioPrueba = document.querySelector('#contenedorPrueba');
@@ -11,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let listaPruebas = [];
     let listaCategorias = [];
+    let listaEtapas = [];
+    let listaEventos = [];
 
     hamBurger.addEventListener("click", function () {
         document.querySelector("#sidebar").classList.toggle("expand");
@@ -34,6 +38,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const nombre = document.getElementById('nombrePruebaInput').value;
         const descripcion = document.getElementById('descripcionPruebaInput').value;
 
+        if (nombre === '' || descripcion === '') {
+            showModal('Por favor, complete todos los campos.');
+            return;
+        }
+
         const nuevaPrueba = {
             nombre: nombre,
             descripcion: descripcion
@@ -51,6 +60,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const edades = document.getElementById('edadInput').value;
         const sexo = document.getElementById('sexoInput').value;
 
+        if (nombre === '' || descripcion === '') {
+            showModal('Por favor, complete todos los campos.');
+            return;
+        }
+
+        if (!isValidDate(fecha)){
+            showModal('Fecha no válida. Formato esperado: yyyy-mm-dd');
+            return;
+        }
+
+        if(!isValidEdad(edades)){
+            showModal('Edad no válida.')
+            return;
+        }
+
         const nuevaCategoria = {
             nombre: nombre,
             descripcion: descripcion,
@@ -62,6 +86,74 @@ document.addEventListener('DOMContentLoaded', function() {
         listaCategorias.push(nuevaCategoria);
         actualizarTablaCategorias();
         formularioCategoria.reset();
+    }
+
+    function agregarEtapa() {
+        const nombre = document.getElementById('nombreEatapaInput').value;
+        const descripcion = document.getElementById('descripcionEtapaInput').value;
+
+        if (nombre === '' || descripcion === '') {
+            showModal('Por favor, complete todos los campos.');
+            return;
+        }
+
+        const nuevaEtapa = {
+            nombre: nombre,
+            descripcion: descripcion
+        };
+
+        listaEtapas.push(nuevaEtapa);
+        actualizarTablaEtapas();
+        formularioEtapa.reset();
+    }
+
+    //Agregar Evento
+    function agregarEventos() {
+        const nombre = document.getElementById('nombreEventoInput').value;
+        const descripcion = document.getElementById('descripcionEventoInput').value;
+        const fecha = document.getElementById('fechaEventoInput').value;
+        const numeroParticipantes = document.getElementById('numParticipantesInput').value;
+        const categoria = document.getElementById('categoriaSelect').value;
+        const prueba = document.getElementById('pruebaSelect').value;
+        const nombreOrganizador = document.getElementById('nombreOrganizadorInput').value;
+        const apellidosOrganizador = document.getElementById('apellidoOrganizadorInput').value;
+        const cedulaOrganizador = document.getElementById('cedulaOrganizadorInput').value;
+
+        if (nombre === '' || descripcion === '' || nombreOrganizador === '' || apellidosOrganizador === ''  ) {
+            showModal('Por favor, complete todos los campos.');
+            return;
+        }
+
+        if (!isValidDate(fecha)){
+            showModal('Fecha no válida. Formato esperado: yyyy-mm-dd');
+            return;
+        }
+
+        if(!isValidEdad(numeroParticipantes)){
+            showModal('Número de participantes no válida.')
+            return;
+        }
+
+        if(!isValidCedula(cedulaOrganizador)){
+            showModal('Cedula no válida')
+            return;
+        }
+
+        const nuevoEvento = {
+            nombre: nombre,
+            fecha: fecha,
+            descripcion: descripcion,
+            numeroParticipantes: numeroParticipantes,
+            categoria: categoria,
+            prueba: prueba,
+            cedulaOrganizador: cedulaOrganizador,
+            nombreOrganizador: nombreOrganizador,
+            apellidosOrganizador: apellidosOrganizador
+        };
+
+        listaEventos.push(nuevoEvento);
+        actualizarTablaEvento();
+        formularioEvento.reset();
     }
 
     function actualizarTablaPruebas() {
@@ -111,14 +203,79 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function actualizarTablaEtapas() {
+        const tablaEtapa = document.getElementById('tabla-etapas').querySelector('tbody');
+        tablaEtapa.innerHTML = '';
+        listaEtapas.forEach(function(etapa, index) {
+            const fila = document.createElement('tr');
+            fila.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${etapa.nombre}</td>
+                <td>${etapa.descripcion}</td>
+                <td>
+                    <a href="#editEtapa" class="edit" style="color: black">
+                        <i class="bi bi-pencil-square bi-4x"></i>
+                    </a>
+                    <a href="#deleteEtapa" class="delete" style="color: black">
+                        <i class="bi bi-file-earmark-x bi-4x"></i>
+                    </a>
+                </td>
+            `;
+            tablaEtapa.appendChild(fila);
+        });
+    }
+
+    function actualizarTablaEvento() {
+        const tablaEvento = document.getElementById('tabla-evento').querySelector('tbody');
+        tablaEvento.innerHTML = '';
+        listaEventos.forEach(function(evento, index) {
+            const fila = document.createElement('tr');
+            fila.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${evento.nombre}</td>
+                <td>${evento.fecha}</td>
+                <td>${evento.descripcion}</td>
+                <td>${evento.numeroParticipantes}</td>
+                <td>${evento.categoria}</td>
+                <td>${evento.prueba}</td>
+                <td>${evento.cedulaOrganizador}</td>
+                <td>${evento.nombreOrganizador}</td>
+                <td>${evento.apellidosOrganizador}</td>
+                <td>
+                    <a href="#editEvento" class="edit" style="color: black">
+                        <i class="bi bi-pencil-square bi-4x"></i>
+                    </a>
+                    <a href="#deleteEvento" class="delete" style="color: black">
+                        <i class="bi bi-file-earmark-x bi-4x"></i>
+                    </a>
+                </td>
+            `;
+            tablaEvento.appendChild(fila);
+        });
+    }
+
+    //Agregar prueba
     formularioPrueba.addEventListener('submit', function(event) {
         event.preventDefault();
         agregarPrueba();
     });
 
+    //Agregar Categoria
     formularioCategoria.addEventListener('submit', function(event) {
         event.preventDefault();
         agregarCategoria();
+    });
+
+    //Agregar Etapa
+    formularioEtapa.addEventListener('submit', function(event) {
+        event.preventDefault();
+        agregarEtapa();
+    });
+
+    //Agregar Evento
+    formularioEvento.addEventListener('submit', function(event) {
+        event.preventDefault();
+        agregarEventos();
     });
 
     // Event listener para el enlace de Pruebas
@@ -211,5 +368,24 @@ document.addEventListener('DOMContentLoaded', function() {
         formularioClub.reset(); // Por ahora, solo reseteamos el formulario
     });
 
+    // Funcionalidad del Modal
+    const modal = document.getElementById('myModal');
+    const span = document.getElementsByClassName('close')[0];
+
+    function showModal(message) {
+        const modalMessage = document.getElementById('modalMessage');
+        modalMessage.textContent = message;
+        modal.style.display = 'block';
+    }
+
+    span.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
 
 });
