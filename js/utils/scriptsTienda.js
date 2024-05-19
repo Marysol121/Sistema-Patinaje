@@ -1,43 +1,7 @@
-// Archivo scriptsTienda.js
+
+    // Archivo scriptsTienda.js
 
 let productos = [];
-
-
-// Función para agregar un producto al carrito
-export function agregarAlCarrito(producto) {
-    let carrito =  JSON.parse(localStorage.getItem('carrito')) || [];
-    carrito.push(producto);
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-    actualizarNumeroCarrito();
-}
-
-
-
-// Función para actualizar el número de productos en el carrito
-export function actualizarNumeroCarrito() {
-    let carrito =  JSON.parse(localStorage.getItem('carrito')) || [];
-    const numeroCarrito = document.getElementById('numero-carrito');
-    if (numeroCarrito) {
-        numeroCarrito.textContent = carrito.length;
-    }
-    localStorage.setItem('numeroCarrito', carrito.length); // Guardar el número de productos en localStorage
-}
-
-// Función para asignar eventos a los botones "Agregar al carrito"
-function asignarEventos() {
-    const botonesAgregar = document.querySelectorAll('.botonAgregar');
-    botonesAgregar.forEach(boton => {
-        boton.addEventListener('click', function() {
-            const productoDiv = boton.closest('.producto');
-            const nombre = productoDiv.querySelector('h3').textContent;
-            const precio = parseFloat(productoDiv.querySelector('span').textContent.replace('Precio: $', ''));
-            const producto = { nombre, precio };
-            agregarAlCarrito(producto);
-        });
-    });
-}
-
-document.addEventListener('DOMContentLoaded', cargarProductos);
 
 // Función para cargar los productos desde el archivo JSON
 export function cargarProductos() {
@@ -64,41 +28,42 @@ function mostrarProductos(productos) {
     contenedorProductos.innerHTML = ""; // Limpiar el contenedor antes de agregar productos
 
     productos.forEach(producto => {
-        const descripcion = truncarDescripcion(producto.descripcion, 150);
+        // Truncar la descripción del producto si es necesario
+        const descripcion = truncarDescripcion(producto.descripcion, 150); // Ajusta la longitud máxima según tus necesidades
 
+        // Crear elemento div para cada producto
         const productoDiv = document.createElement('div');
         productoDiv.classList.add('producto');
+
+        // Construir la estructura del producto
         productoDiv.innerHTML = `
             <img src="${producto.imagen}" alt="${producto.nombre}" style="width: 100px; height: 100px;">
             <h3>${producto.nombre}</h3>
             <p>${descripcion}</p>
             <stock>Stock disponible: ${producto.stock}</stock>
             <span>Precio: $${producto.precio}</span>
-            <button class="botonAgregar">Agregar al carrito</button>
+            <button class="boton-agregar">Agregar al carrito</button>
         `;
+
+        // Agregar el producto al contenedor de productos
         contenedorProductos.appendChild(productoDiv);
     });
-
-    // Asignar eventos a los botones "Agregar al carrito" después de que los productos hayan sido añadidos al DOM
-    asignarEventos();
 }
 
 // Función para limpiar los productos actuales
 function limpiarProductos() {
     const contenedorProductos = document.getElementById('productos');
-    if (contenedorProductos) {
-        contenedorProductos.innerHTML = '';
-    }
+    contenedorProductos.innerHTML = '';
 }
 
 // Función para filtrar los productos por etiqueta
 export function filtrarProductos(etiqueta) {
-    limpiarProductos();
+    limpiarProductos(); // Limpiar los productos actuales
 
+    // Filtrar los productos por etiqueta
     const productosFiltrados = productos.filter(producto => producto.etiquetas.includes(etiqueta));
-    mostrarProductos(productosFiltrados);
+    mostrarProductos(productosFiltrados); // Mostrar los productos filtrados
 }
-
 
 
 /*
