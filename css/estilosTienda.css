@@ -222,6 +222,64 @@ body {
     background-color: #530202;
 }
 
+/* estilos para la pagina del carrito de compras*/
+#contenedor-carrito {
+    width: 80%;
+    margin: auto auto 100px auto;
+    background: #f0efef94;
+    padding: 20px;
+    box-shadow: 0 0 5px #a5000079;
+}
+
+.producto-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ebeae2;
+}
+
+
+
+.producto-info h3 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.producto-info span {
+    color: #26a500;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.eliminar-producto {
+    background: none;
+    border: none;
+    font-size: 50px;
+    font-weight: bold;
+    color: #A50000;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.eliminar-producto:hover {
+    color: #e41d16;
+    font-size: 60px;
+    
+}
+
+.labelTotal {
+    margin-top: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: right;
+}
+
+
+
+
+
+
 /* Estilos adicionales para diferentes tamaños de pantalla */
 @media only screen and (max-width: 1000px) {
     /* Dos productos por fila en pantallas entre 758px y 1000px */

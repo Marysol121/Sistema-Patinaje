@@ -1,0 +1,78 @@
+/* Archivo estilos.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('../img/loginFondo.jpg') no-repeat center center fixed; 
+    background-size:cover;
+    /*background: linear-gradient(to right, #ff9966, #ff5e62);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.contenedor-login {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 40%;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 50px;
+}
+
+.grupo-input {
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c4c2c2;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ff5e62;
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b9250b;
+    font-weight: bold;
+}
+
+.mensaje-error {
+    color: #b9250b;
+    margin-top: 10px;
+    display: none;
+}
+
+@media (min-width: 600px) {
+    .contenedor-login {
+        padding: 40px 60px;
+    }
+}

@@ -1,20 +1,26 @@
 // Archivo scriptsTienda.js
 
 let productos = [];
-let carrito = [];
+
 
 // Función para agregar un producto al carrito
 export function agregarAlCarrito(producto) {
+    let carrito =  JSON.parse(localStorage.getItem('carrito')) || [];
     carrito.push(producto);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
     actualizarNumeroCarrito();
 }
 
+
+
 // Función para actualizar el número de productos en el carrito
-function actualizarNumeroCarrito() {
+export function actualizarNumeroCarrito() {
+    let carrito =  JSON.parse(localStorage.getItem('carrito')) || [];
     const numeroCarrito = document.getElementById('numero-carrito');
     if (numeroCarrito) {
         numeroCarrito.textContent = carrito.length;
     }
+    localStorage.setItem('numeroCarrito', carrito.length); // Guardar el número de productos en localStorage
 }
 
 // Función para asignar eventos a los botones "Agregar al carrito"
@@ -27,7 +33,6 @@ function asignarEventos() {
             const precio = parseFloat(productoDiv.querySelector('span').textContent.replace('Precio: $', ''));
             const producto = { nombre, precio };
             agregarAlCarrito(producto);
-            console.log(carrito)
         });
     });
 }

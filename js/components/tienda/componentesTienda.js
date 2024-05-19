@@ -1,5 +1,5 @@
 
-import { cargarProductos, filtrarProductos } from "../../utils/scriptsTienda.js";
+import { cargarProductos, filtrarProductos, actualizarNumeroCarrito } from "../../utils/scriptsTienda.js";
 import { cargarCarrito } from "../../pages/paginaUsuario.js";
 
 export function crearTienda() {
@@ -52,6 +52,8 @@ export function crearTienda() {
             filtrarProductos(etiqueta);
         });
     });
+    
+    actualizarNumeroCarrito();
 
     document.getElementById('linkCarrito').addEventListener('click', function (event) {
         event.preventDefault();

@@ -17,7 +17,7 @@ export function crearNavUsuario() {
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav ms-auto mb-lg-0">
                     <li class="nav-item">
-                        <a class="link-light" href="#">Inicio Sesion/Registrarse</a>
+                        <a class="link-light" href="../paginas/login.html">Iniciar Sesión</a>
                     </li>
                     <li class="nav-item px-2">
                         <i class="bi bi-instagram fs-5 "></i>
