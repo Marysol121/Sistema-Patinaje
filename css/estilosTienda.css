@@ -223,14 +223,32 @@ body {
 }
 
 /* estilos para la pagina del carrito de compras*/
-#contenedor-carrito {
+
+#contenedor-principal {
+    display: flex;
+    justify-content: space-between;
     width: 80%;
-    margin: auto auto 100px auto;
-    background: #f0efef94;
+    margin: 50px auto;
+    padding: 20px;
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en dispositivos pequeños */
+}
+
+#contenedor-carrito, #contenedor-formulario {
     padding: 20px;
     box-shadow: 0 0 5px #a5000079;
 }
 
+#contenedor-carrito {
+    width: 60%;
+    /*margin: auto auto 100px auto;
+    background: #f0efef94;
+    padding: 20px;
+    box-shadow: 0 0 5px #a5000079;*/
+}
+#contenedor-formulario {
+    width: 35%;
+}
 .producto-carrito {
     display: flex;
     justify-content: space-between;
@@ -243,19 +261,19 @@ body {
 
 .producto-info h3 {
     margin: 0;
-    font-size: 22px;
+    font-size: 1em;
 }
 
 .producto-info span {
     color: #26a500;
     margin-top: 5px;
-    font-weight: bold;
+    
 }
 
 .eliminar-producto {
     background: none;
     border: none;
-    font-size: 50px;
+    font-size: 1.5em;
     font-weight: bold;
     color: #A50000;
     cursor: pointer;
@@ -264,18 +282,66 @@ body {
 
 .eliminar-producto:hover {
     color: #e41d16;
-    font-size: 60px;
+    font-size: 2em;
     
 }
 
 .labelTotal {
     margin-top: 30px;
-    font-size: 40px;
+    font-size: 1.5em;
     font-weight: bold;
     text-align: right;
 }
+#formulario-envio {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 5px #a5000079;
+}
 
+#formulario-envio h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    text-align: center;
+}
 
+#formulario-envio label {
+    display: block;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+#formulario-envio input {
+    width: 100%;
+    padding: 2px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#formulario-envio button {
+    width: 100%;
+    padding: 10px;
+    background-color: #26a500;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#contenedor-formulario h2{
+    margin-top: 0;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#formulario-envio button:hover {
+    background-color: #228b22;
+}
+
+/*************************************************/
 
 
 
@@ -289,9 +355,27 @@ body {
     .botonAgregar {
         display: block !important;
     }
+    #contenedor-principal {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contenedor-carrito, #contenedor-formulario {
+        width: 80%;
+        margin-bottom: 20px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
+    #contenedor-principal {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contenedor-carrito, #contenedor-formulario {
+        width: 100%;
+        margin-bottom: 20px;
+    }
     /* Un producto por fila en pantallas menores a 758px */
     .producto {
         width: calc(100% - 20px); /* Calculamos el ancho para un producto por fila */
