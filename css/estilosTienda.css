@@ -164,7 +164,7 @@ body {
 
 
 /* Estilo para el botón "Agregar al carrito" */
-.boton-agregar {
+.botonAgregar {
     display: none;
     position: absolute;
     bottom: 10px;
@@ -215,10 +215,10 @@ body {
 }
 
 /* Mostrar el botón cuando el mouse se posa sobre el producto */
-.producto:hover .boton-agregar {
+.producto:hover .botonAgregar {
     display: block;
 }
-.boton-agregar:hover{
+.botonAgregar:hover{
     background-color: #530202;
 }
 
@@ -228,7 +228,7 @@ body {
     .producto {
         width: calc(45% - 20px); /* Calculamos el ancho para dos productos por fila */
     }
-    .boton-agregar {
+    .botonAgregar {
         display: block !important;
     }
 }
@@ -238,7 +238,7 @@ body {
     .producto {
         width: calc(100% - 20px); /* Calculamos el ancho para un producto por fila */
     }
-    .boton-agregar {
+    .botonAgregar {
         display: block !important;
     }
 }
