@@ -1,7 +1,38 @@
-
-    // Archivo scriptsTienda.js
+// Archivo scriptsTienda.js
 
 let productos = [];
+let carrito = [];
+
+// Función para agregar un producto al carrito
+export function agregarAlCarrito(producto) {
+    carrito.push(producto);
+    actualizarNumeroCarrito();
+}
+
+// Función para actualizar el número de productos en el carrito
+function actualizarNumeroCarrito() {
+    const numeroCarrito = document.getElementById('numero-carrito');
+    if (numeroCarrito) {
+        numeroCarrito.textContent = carrito.length;
+    }
+}
+
+// Función para asignar eventos a los botones "Agregar al carrito"
+function asignarEventos() {
+    const botonesAgregar = document.querySelectorAll('.botonAgregar');
+    botonesAgregar.forEach(boton => {
+        boton.addEventListener('click', function() {
+            const productoDiv = boton.closest('.producto');
+            const nombre = productoDiv.querySelector('h3').textContent;
+            const precio = parseFloat(productoDiv.querySelector('span').textContent.replace('Precio: $', ''));
+            const producto = { nombre, precio };
+            agregarAlCarrito(producto);
+            console.log(carrito)
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', cargarProductos);
 
 // Función para cargar los productos desde el archivo JSON
 export function cargarProductos() {
@@ -25,45 +56,49 @@ function truncarDescripcion(texto, longitudMaxima) {
 // Función para mostrar los productos en la página HTML
 function mostrarProductos(productos) {
     const contenedorProductos = document.getElementById('productos');
+    if (!contenedorProductos) {
+        console.error('Error: El contenedor de productos no existe en el DOM.');
+        return;
+    }
+
     contenedorProductos.innerHTML = ""; // Limpiar el contenedor antes de agregar productos
 
     productos.forEach(producto => {
-        // Truncar la descripción del producto si es necesario
-        const descripcion = truncarDescripcion(producto.descripcion, 150); // Ajusta la longitud máxima según tus necesidades
+        const descripcion = truncarDescripcion(producto.descripcion, 150);
 
-        // Crear elemento div para cada producto
         const productoDiv = document.createElement('div');
         productoDiv.classList.add('producto');
-
-        // Construir la estructura del producto
         productoDiv.innerHTML = `
             <img src="${producto.imagen}" alt="${producto.nombre}" style="width: 100px; height: 100px;">
             <h3>${producto.nombre}</h3>
             <p>${descripcion}</p>
             <stock>Stock disponible: ${producto.stock}</stock>
             <span>Precio: $${producto.precio}</span>
-            <button class="boton-agregar">Agregar al carrito</button>
+            <button class="botonAgregar">Agregar al carrito</button>
         `;
-
-        // Agregar el producto al contenedor de productos
         contenedorProductos.appendChild(productoDiv);
     });
+
+    // Asignar eventos a los botones "Agregar al carrito" después de que los productos hayan sido añadidos al DOM
+    asignarEventos();
 }
 
 // Función para limpiar los productos actuales
 function limpiarProductos() {
     const contenedorProductos = document.getElementById('productos');
-    contenedorProductos.innerHTML = '';
+    if (contenedorProductos) {
+        contenedorProductos.innerHTML = '';
+    }
 }
 
 // Función para filtrar los productos por etiqueta
 export function filtrarProductos(etiqueta) {
-    limpiarProductos(); // Limpiar los productos actuales
+    limpiarProductos();
 
-    // Filtrar los productos por etiqueta
     const productosFiltrados = productos.filter(producto => producto.etiquetas.includes(etiqueta));
-    mostrarProductos(productosFiltrados); // Mostrar los productos filtrados
+    mostrarProductos(productosFiltrados);
 }
+
 
 
 /*
