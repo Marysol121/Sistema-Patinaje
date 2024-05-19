@@ -61,9 +61,7 @@ export function crearNavUsuario() {
             <li class="nav-item  fs-4 ">
               <a class="nav-link active" href="#" id="linkTienda">Tienda</a>
             </li>
-            <li class="nav-item mx-2">
-              <i class="nav-link active bi bi-cart fs-4"  id="linkCarrito"></i>
-            </li>
+            
           </ul>
 
         </div>

@@ -34,6 +34,15 @@ export function crearTienda(){
     </div>
 
     <div id="productos"></div>
+
+    <!-- Carrito como icono -->
+    <div id="carrito-icono">
+        <a href="carrito.html">
+            <img src="../img/carrito.png" >
+            <span id="numero-carrito">0</span>
+        </a>
+    </div>
+    
     `
     
     
