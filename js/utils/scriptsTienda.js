@@ -56,11 +56,6 @@ function truncarDescripcion(texto, longitudMaxima) {
 // Función para mostrar los productos en la página HTML
 function mostrarProductos(productos) {
     const contenedorProductos = document.getElementById('productos');
-    if (!contenedorProductos) {
-        console.error('Error: El contenedor de productos no existe en el DOM.');
-        return;
-    }
-
     contenedorProductos.innerHTML = ""; // Limpiar el contenedor antes de agregar productos
 
     productos.forEach(producto => {

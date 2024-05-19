@@ -1,4 +1,6 @@
+
 import { cargarProductos, filtrarProductos } from "../../utils/scriptsTienda.js";
+import { cargarCarrito } from "../../pages/paginaUsuario.js";
 
 export function crearTienda() {
     var respuestaHTML = `
@@ -31,7 +33,7 @@ export function crearTienda() {
         </div>
         <div id="productos"></div>
         <div id="carrito-icono">
-            <a href="carrito.html">
+            <a class="nav-link active" href="#" id="linkCarrito">
                 <img src="../img/carrito.png" >
                 <span id="numero-carrito">0</span>
             </a>
@@ -50,4 +52,9 @@ export function crearTienda() {
             filtrarProductos(etiqueta);
         });
     });
+
+    document.getElementById('linkCarrito').addEventListener('click', function (event) {
+        event.preventDefault();
+        cargarCarrito();
+      });
 }

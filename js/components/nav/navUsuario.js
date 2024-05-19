@@ -1,7 +1,7 @@
 //ALt + 96
 
 
-import { cargarEventos, cargarInicio, cargarNoticias, cargarTienda } from "../../pages/paginaUsuario.js";
+import { cargarCarrito, cargarInicio, cargarNoticias, cargarTienda } from "../../pages/paginaUsuario.js";
 
 
 export function crearNavUsuario() {
