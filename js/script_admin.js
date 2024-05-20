@@ -9,8 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const formularioRanking = document.querySelector('#contenedorRanking');
     const formularioEvento = document.querySelector('#contenedorEvento');
     const formularioEtapa = document.querySelector('#contenedorEtapa');
+    const formularioRankingClubes = document.querySelector('#contenedorRankingC')
+    const formularioRankingDeportistas = document.querySelector('#contenedorRankingD')
 
-    
+
     let listaPruebas = [];
     let listaCategorias = [];
     let listaEtapas = [];
@@ -29,6 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
         formularioRanking.style.display= 'none';
         formularioEvento.style.display= 'none';
         formularioEtapa.style.display = 'none';
+        formularioRankingDeportistas.style.display = 'none';
+        formularioRankingClubes.style.display = 'none';
 
         // Mostrar el formulario deseado
         formulario.style.display = 'block';
@@ -352,7 +356,32 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.sidebar-item a[href="#ranking"]').addEventListener('click', function(event) {
         event.preventDefault();
         mostrarFormulario(formularioRanking);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const tipoRankingSelect = document.getElementById('tipoRankingSelect');
+            
+            tipoRankingSelect.addEventListener('change', function() {
+                const selectedValue = this.value;
+                if (selectedValue === 'deportistas') {
+                    mostrarFormulario(formularioRankingDeportistas)
+                
+                } else if (selectedValue === 'clubes') {
+                    mostrarFormulario(formularioRankingClubes)
+                }
+            });
+        });
+
+
     });
+
+
+
+
+
+
+
+
+
 
     // Manejo del botón cancelar en el formulario de deportistas
     const cancelarFormularioRankingBtn = formularioClub.querySelector("#cancelarFormulario");
