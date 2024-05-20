@@ -32,16 +32,20 @@ document.addEventListener('DOMContentLoaded', function() {
 //Cargar Datos iniciales de Categorias
 function cargarDatosInicialesCategorias(nombreSelec) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     const selectCategoria = document.getElementById(nombreSelec);
 
     
 
 =======
 >>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
+=======
+>>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
     fetch('/data/data_categorias.json')
         .then(response => response.json())
         .then(data => {
             const listaCategorias = data.dataCategorias;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
             // Limpiar el contenido actual del select
@@ -55,10 +59,15 @@ function cargarDatosInicialesCategorias(nombreSelec) {
 
             // Agregar opciones desde el JSON
 =======
+=======
+>>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
             const selectCategoria = document.getElementById(nombreSelec);
             
             selectCategoria.innerHTML = '<option value="" disabled selected>Seleccione una categoría</option>';
             
+<<<<<<< HEAD
+>>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
+=======
 >>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
             listaCategorias.forEach(categoria => {
                 const option = document.createElement('option');
@@ -71,9 +80,15 @@ function cargarDatosInicialesCategorias(nombreSelec) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 //Agregar el ranking de los deportistas
+=======
+//Agregar el ranking de los deportistas
+let listaRankingDep = [];
+
+>>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
 =======
 //Agregar el ranking de los deportistas
 let listaRankingDep = [];
@@ -140,6 +155,11 @@ function actualizarTablaRankingDep() {
 
 //Agregar Ranking de los clubs
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+let listaRankingClubs = [];
+
+>>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
 =======
 let listaRankingClubs = [];
 
@@ -258,7 +278,10 @@ function showModal(message) {
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
+=======
+>>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
 }
 >>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7

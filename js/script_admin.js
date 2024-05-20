@@ -33,9 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
         formularioEvento.style.display= 'none';
         formularioEtapa.style.display = 'none';
 <<<<<<< HEAD
+<<<<<<< HEAD
         formularioTienda.style.display = 'none';
         //formularioRankingDeportistas.style.display = 'none';
         //formularioRankingClubes.style.display = 'none';
+=======
+        formularioRankingDeportistas.style.display = 'none';
+        formularioRankingClubes.style.display = 'none';
+>>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
 =======
         formularioRankingDeportistas.style.display = 'none';
         formularioRankingClubes.style.display = 'none';
