@@ -109,7 +109,7 @@ body {
 /* Estilo individual para cada producto */
 .producto {
     background-color: white;
-    width: calc(30% - 20px); /* Calculamos el ancho para tres productos por fila */
+    width: calc(33% - 20px); /* Calculamos el ancho para tres productos por fila */
     margin-bottom: 30px;
     padding: 20px;
     border-radius: 5px;
@@ -141,10 +141,10 @@ body {
     color: #666;
     margin-bottom: 10px;
     padding: 5px;
-    max-height: 3em; /* Altura máxima de tres líneas de texto */
+    max-height: 5em; /* Altura máxima de tres líneas de texto */
     overflow: hidden; /* Oculta el texto que excede la altura máxima */
     text-overflow: ellipsis; /* Agrega puntos suspensivos al final del texto truncado */
-    font-size: 1em;
+    
 }
 
 /* Estilo para el precio del producto */

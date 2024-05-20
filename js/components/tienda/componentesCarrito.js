@@ -35,7 +35,10 @@ export function crearCarrito() {
             <!-- Contenedor para los botones de PayPal -->
             <div id="paypal-button-container"></div>
         </div>
+        <!-- Contenedor para el popup -->
+        
     </div>
+    
     `;
 
     document.getElementById("contenedor").innerHTML = respuestaHTML;
