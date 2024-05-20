@@ -1,0 +1,39 @@
+{
+    "dataEventos": [
+        {
+            "id": 1,
+            "nombre": "Campeonato Abierto de Patinaje de Carreras",
+            "fecha": "2024-06-20",
+            "descripcion": "Todas las Categorías",
+            "numParticipantes": 50,
+            "categoria": "JUVENIL",
+            "cedulaOrganizador": "0106741853",
+            "nombreOrganizador": "Juan",
+            "apellidosOrganizador": "Peña"
+        },
+        {
+            "id": 2,
+            "nombre": "Selectivo Campeonato Nacional de Cadetes",
+            "fecha": "2024-08-22",
+            "descripcion": "Selectivo para la Selección de la Provincia del Azuay",
+            "numParticipantes": 40,
+            "categoria": "CADETES",
+            "cedulaOrganizador": "0106741853",
+            "nombreOrganizador": "Martín",
+            "apellidosOrganizador": "Del Potro"
+        },
+        {
+            "id": 3,
+            "nombre": "Torneo Infantil de Natación",
+            "fecha": "2024-09-10",
+            "descripcion": "Competencia para niños de 8 a 12 años",
+            "numParticipantes": 30,
+            "categoria": "INFANTIL",
+            "cedulaOrganizador": "0106741853",
+            "nombreOrganizador": "Laura",
+            "apellidosOrganizador": "Gómez"
+        }
+    ]
+}
+
+        

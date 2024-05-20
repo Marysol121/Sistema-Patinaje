@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nombre": "Primera Etapa",
+        "descripcion": "+80 participantes"
+    },
+    {
+        "id": 2,
+        "nombre": "Segunda Etapa",
+        "descripcion": "+40 participantes y -80 participantes"
+    },
+    {
+        "id": 3,
+        "nombre": "Semifinal",
+        "descripcion": "+10 participantes y -40 participantes"
+    },
+    {
+        "id": 4,
+        "nombre": "Final",
+        "descripcion": "-10 participantes"
+    }
+]
+
