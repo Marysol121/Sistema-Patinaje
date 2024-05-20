@@ -11,12 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
             cargarDatosInicialesCategorias('categoriaRankingInputDeportistas');
             const formularioDeportista = document.getElementById('formularioRankingDeportistas');
             formularioDeportista.addEventListener('submit', agregarDeportista);
+            cargarDatosRankingDep();
         } else if (tipoSeleccionado === 'clubes') {
             contenedorRankingDeportistas.style.display = 'none';
             contenedorRankingClubes.style.display = 'block';
             cargarDatosInicialesCategorias('categoriaRankingInputClubes');
             const formularioClubs = document.getElementById('formularioRankingClubes');
             formularioClubs.addEventListener('submit', agregarClubs);
+            cargarDatosRankingClubs();
         } else {
             contenedorRankingDeportistas.style.display = 'none';
             contenedorRankingClubes.style.display = 'none';
@@ -146,12 +148,11 @@ function agregarClubs(event) {
 
     listaRankingClubs.push(nuevoRankingClub);
     actualizarTablaRankingClub();
-
     document.getElementById('formularioRankingClubes').reset();
 }
 
 function actualizarTablaRankingClub() {
-    const tbodyRankingClub = document.getElementById('tablaClubesBody');
+    const tbodyRankingClub = document.getElementById('tbodyRankingClubs');
     tbodyRankingClub.innerHTML = '';
     listaRankingClubs.forEach(function(rankClub) {
         const fila = document.createElement('tr');
@@ -175,6 +176,32 @@ function actualizarTablaRankingClub() {
         tbodyRankingClub.appendChild(fila);
     });
 }
+
+//Cargar Datos Iniciales
+
+// Función para cargar los datos del JSON en la tabla de clubs
+function cargarDatosRankingClubs() {
+    fetch('/data/data_rankingC.json')
+        .then(response => response.json())
+        .then(data => {
+            listaRankingClubs = data.rankingClubes;
+            actualizarTablaRankingClub();
+        })
+        .catch(error => console.error('Error al cargar los datos:', error));
+}
+
+// Función para cargar los datos del JSON en la tabla de los deportistas
+function cargarDatosRankingDep() {
+    fetch('/data/data_rankingD.json')
+        .then(response => response.json())
+        .then(data => {
+            listaRankingDep = data.rankingDeportistas;
+            actualizarTablaRankingDep();
+        })
+        .catch(error => console.error('Error al cargar los datos:', error));
+}
+
+//Validaciones
 
 function isValidDate(dateString) {
     const regexDate = /^\d{4}-\d{2}-\d{2}$/;

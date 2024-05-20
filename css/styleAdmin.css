@@ -193,8 +193,4 @@ a.sidebar-link:hover {
     color: #FFD700;
 }
 
-.oculto {
-    display: none;
-}
-
 @media (min-width: 768px) {}
