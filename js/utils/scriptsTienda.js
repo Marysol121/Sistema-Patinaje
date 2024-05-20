@@ -43,13 +43,17 @@ document.addEventListener('DOMContentLoaded', cargarProductos);
 
 // Función para cargar los productos desde el archivo JSON
 export function cargarProductos() {
-    fetch('productos.json')
-        .then(response => response.json())
-        .then(data => {
-            productos = data;
-            mostrarProductos(productos.slice(0, 9)); // Mostrar los primeros 9 productos
-        })
-        .catch(error => console.error('Error al cargar los productos:', error));
+    fetch('../productos.json')
+    .then(response => response.json())
+    .then(data => {
+        // Corrige la función de mapeo de los productos
+        let productos = data.dataProductos.map(producto => ({
+            ...producto,
+        }));
+        mostrarProductos(productos.slice(0, 9)); // Mostrar los primeros 9 productos
+    })
+    .catch(error => console.error('Error al cargar los productos:', error));
+
 }
 
 // Función para truncar la descripción del producto y agregar puntos suspensivos

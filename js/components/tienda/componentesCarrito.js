@@ -2,6 +2,7 @@ import { mostrarCarrito } from "../../utils/scriptsCarrito.js";
 import { configurarPayPal } from "../../utils/scriptsCarrito.js";
 
 export function crearCarrito() {
+    console.log("hey2")
     var respuestaHTML = `
     <h1 id="titulo">CARRITO DE COMPRAS</h1>
     <div id="contenedor-principal">
@@ -40,7 +41,7 @@ export function crearCarrito() {
     </div>
     
     `;
-
+    console.log("hey3")
     document.getElementById("contenedor").innerHTML = respuestaHTML;
     mostrarCarrito()
 

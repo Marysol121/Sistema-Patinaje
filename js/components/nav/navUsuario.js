@@ -6,6 +6,7 @@ import {
   cargarTienda,
 } from "../../pages/paginaUsuario.js";
 import { crearInicio } from "../inicio/componentesInicio.js";
+import { crearCarrito } from "../tienda/componentesCarrito.js";
 //import { crearRankings } from "../rankings/componentesRankings.js";
 
 export function crearNavUsuario() {
@@ -21,7 +22,7 @@ export function crearNavUsuario() {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto mb-lg-0 py-0">
                   <li class="nav-item">
-                      <a class="link-light" href="#">Inicio Sesion/Registrarse</a>
+                      <a class="link-light" href="../paginas/login.html" >Inicio Sesión</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link py-0" href="#"><i class="bi bi-instagram fs-5"></i></a>
@@ -67,7 +68,7 @@ export function crearNavUsuario() {
               <a class="nav-link active py-0" href="#" id="linkTienda">Tienda</a>
             </li>
             <li class="nav-item mx-2 ">
-              <a class="nav-link py-0" href="#" id="linkCarrito"><i class="bi bi-cart fs-4"></i>
+              <a class="nav-link py-0" href="#" id="linkTienda2"><i class="bi bi-cart fs-4"></i>
             </li>
           </ul>
 
@@ -89,6 +90,14 @@ export function crearNavUsuario() {
       event.preventDefault();
       cargarTienda();
     });
+  
+    document
+    .getElementById("linkTienda2")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      crearCarrito();
+    });
+
 
   document
     .getElementById("linkNoticias")

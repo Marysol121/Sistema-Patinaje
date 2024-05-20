@@ -1,6 +1,6 @@
 
 import { cargarProductos, filtrarProductos, actualizarNumeroCarrito } from "../../utils/scriptsTienda.js";
-import { cargarCarrito } from "../../pages/paginaUsuario.js";
+import { crearCarrito} from '../tienda/componentesCarrito.js';
 
 export function crearTienda() {
     var respuestaHTML = `
@@ -57,6 +57,7 @@ export function crearTienda() {
 
     document.getElementById('linkCarrito').addEventListener('click', function (event) {
         event.preventDefault();
-        cargarCarrito();
+        console.log("hey")
+        crearCarrito();
       });
 }

@@ -1,167 +1,264 @@
+let listaRankingClubs = [];
+let listaRankingDep = [];
+
 document.addEventListener('DOMContentLoaded', function() {
-    const tipoRankingSelect = document.getElementById('tipoRankingSelect');
+    const tipoRankingSelect = document.getElementById('tipoRankingSelectPrincipal');
     const contenedorRankingDeportistas = document.getElementById('contenedorRankingDeportistas');
     const contenedorRankingClubes = document.getElementById('contenedorRankingClubes');
-    const formularioRankingDeportistas = document.getElementById('formularioRankingDeportistas');
-    const formularioRankingClubes = document.getElementById('formularioRankingClubes');
 
     tipoRankingSelect.addEventListener('change', function() {
         const tipoSeleccionado = tipoRankingSelect.value;
         if (tipoSeleccionado === 'deportistas') {
-            formularioRankingDeportistas.classList.remove('oculto');
-            formularioRankingClubes.classList.add('oculto');
-            contenedorRankingDeportistas.classList.remove('oculto');
-            contenedorRankingClubes.classList.add('oculto');
-            cargarDatosInicialesRankingDeportistas();
+            contenedorRankingDeportistas.style.display = 'block';
+            contenedorRankingClubes.style.display = 'none';
+            cargarDatosInicialesCategorias('categoriaRankingInputDeportistas');
+            const formularioDeportista = document.getElementById('formularioRankingDeportistas');
+            formularioDeportista.addEventListener('submit', agregarDeportista);
+            cargarDatosRankingDep();
         } else if (tipoSeleccionado === 'clubes') {
-            formularioRankingDeportistas.classList.add('oculto');
-            formularioRankingClubes.classList.remove('oculto');
-            contenedorRankingDeportistas.classList.add('oculto');
-            contenedorRankingClubes.classList.remove('oculto');
-            cargarDatosInicialesRankingClubes();
+            contenedorRankingDeportistas.style.display = 'none';
+            contenedorRankingClubes.style.display = 'block';
+            cargarDatosInicialesCategorias('categoriaRankingInputClubes');
+            const formularioClubs = document.getElementById('formularioRankingClubes');
+            formularioClubs.addEventListener('submit', agregarClubs);
+            cargarDatosRankingClubs();
         } else {
-            formularioRankingDeportistas.classList.add('oculto');
-            formularioRankingClubes.classList.add('oculto');
-            contenedorRankingDeportistas.classList.add('oculto');
-            contenedorRankingClubes.classList.add('oculto');
+            contenedorRankingDeportistas.style.display = 'none';
+            contenedorRankingClubes.style.display = 'none';
         }
     });
-
-    formularioRankingDeportistas.addEventListener('submit', agregarRankingDeportistas);
-    formularioRankingClubes.addEventListener('submit', agregarRankingClubes);
 });
 
-let listaRankingDeportistas = [];
-let listaCategorias = [];
-let listaRankingClubes = [];
+//Cargar Datos iniciales de Categorias
+function cargarDatosInicialesCategorias(nombreSelec) {
+<<<<<<< HEAD
+    const selectCategoria = document.getElementById(nombreSelec);
 
-function cargarDatosInicialesRankingDeportistas() {
-    fetch('/data/data_rankingD.json')
-        .then(response => response.json())
-        .then(data => {
-            listaRankingDeportistas = data.rankingDeportistas;
-            actualizarTablaRankingDeportistas();
-        })
-        .catch(error => console.error('Error al cargar los datos del ranking de deportistas:', error));
+    
 
+=======
+>>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
     fetch('/data/data_categorias.json')
         .then(response => response.json())
         .then(data => {
-            listaCategorias = data.dataCategorias;
-            actualizarSelectCategorias('categoriaRankingInput');
+            const listaCategorias = data.dataCategorias;
+<<<<<<< HEAD
+
+            // Limpiar el contenido actual del select
+            selectCategoria.innerHTML = '';
+
+            // Agregar la opción inicial
+            const optionInicial = document.createElement('option');
+            optionInicial.value = '';
+            optionInicial.textContent = 'Seleccione una categoría';
+            selectCategoria.appendChild(optionInicial);
+
+            // Agregar opciones desde el JSON
+=======
+            const selectCategoria = document.getElementById(nombreSelec);
+            
+            selectCategoria.innerHTML = '<option value="" disabled selected>Seleccione una categoría</option>';
+            
+>>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
+            listaCategorias.forEach(categoria => {
+                const option = document.createElement('option');
+                option.value = categoria.nombre;
+                option.textContent = categoria.nombre;
+                selectCategoria.appendChild(option);
+            });
         })
-        .catch(error => console.error('Error al cargar los datos de las categorías:', error));
+        .catch(error => console.error('Error al cargar los datos:', error));
 }
 
-function cargarDatosInicialesRankingClubes() {
+<<<<<<< HEAD
+
+
+//Agregar el ranking de los deportistas
+=======
+//Agregar el ranking de los deportistas
+let listaRankingDep = [];
+
+>>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
+function agregarDeportista(event) {
+    event.preventDefault();
+
+    const nombre = document.getElementById('nombreRankingInputDeportistas').value;
+    const descripcion = document.getElementById('descripcionRankingInputDeportistas').value;
+    const categoria = document.getElementById('categoriaRankingInputDeportistas').value;
+    const anio = document.getElementById('añoRankingInputDeportistas').value;
+    const fecha = document.getElementById('fechaInicioRankingInputDeportistas').value;
+
+    if (nombre === '' || descripcion === '' || anio === '') {
+        showModal('Por favor, complete todos los campos.');
+        return;
+    }
+
+    if (!isValidDate(fecha)) {
+        showModal('Fecha no válida. Formato esperado: yyyy-mm-dd');
+        return;
+    }
+
+    const nuevoRankingDeportista = {
+        id: listaRankingDep.length + 1,
+        nombre: nombre,
+        descripcion: descripcion,
+        categoria: categoria,
+        anio: anio,
+        fecha: fecha
+    };
+
+    listaRankingDep.push(nuevoRankingDeportista);
+    actualizarTablaRankingDep();
+
+    document.getElementById('formularioRankingDeportistas').reset();
+}
+
+function actualizarTablaRankingDep() {
+    const tbodyRankingDeportistas = document.getElementById('tbodyRankingDeportistas');
+    tbodyRankingDeportistas.innerHTML = '';
+    listaRankingDep.forEach(function(rankDep) {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${rankDep.id}</td>
+            <td>${rankDep.nombre}</td>
+            <td>${rankDep.descripcion}</td>
+            <td>${rankDep.categoria}</td>
+            <td>${rankDep.anio}</td>
+            <td>${rankDep.fecha}</td>
+            <td>
+                <a href="#editRankDep" class="edit" style="color: black">
+                    <i class="bi bi-pencil-square bi-4x"></i>
+                </a>
+                <a href="#deleteRankDep" class="delete" style="color: black">
+                    <i class="bi bi-file-earmark-x bi-4x"></i>
+                </a>
+            </td>
+        `;
+        tbodyRankingDeportistas.appendChild(fila);
+    });
+}
+
+//Agregar Ranking de los clubs
+<<<<<<< HEAD
+=======
+let listaRankingClubs = [];
+
+>>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
+function agregarClubs(event) {
+    event.preventDefault();
+
+    const nombre = document.getElementById('nombreRankingInputClubes').value;
+    const descripcion = document.getElementById('descripcionRankingInputClubes').value;
+    const categoria = document.getElementById('categoriaRankingInputClubes').value;
+    const anio = document.getElementById('añoRankingInputClubes').value;
+    const fechaInicio = document.getElementById('fechaInicioRankingInputClubes').value;
+    const fechaFin = document.getElementById('fechaFinRankingInputClubes').value;
+
+    if (nombre === '' || descripcion === '' || anio === '') {
+        showModal('Por favor, complete todos los campos.');
+        return;
+    }
+
+    if (!isValidDate(fechaInicio)) {
+        showModal('Fecha Inicial no válida. Formato esperado: yyyy-mm-dd');
+        return;
+    }
+
+    if (!isValidDate(fechaFin)) {
+        showModal('Fecha Final no válida. Formato esperado: yyyy-mm-dd');
+        return;
+    }
+
+    const nuevoRankingClub = {
+        id: listaRankingClubs.length + 1,
+        nombre: nombre,
+        descripcion: descripcion,
+        categoria: categoria,
+        anio: anio,
+        fechaInicio: fechaInicio,
+        fechaFin: fechaFin
+    };
+
+    listaRankingClubs.push(nuevoRankingClub);
+    actualizarTablaRankingClub();
+    document.getElementById('formularioRankingClubes').reset();
+}
+
+function actualizarTablaRankingClub() {
+    const tbodyRankingClub = document.getElementById('tbodyRankingClubs');
+    tbodyRankingClub.innerHTML = '';
+    listaRankingClubs.forEach(function(rankClub) {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${rankClub.id}</td>
+            <td>${rankClub.nombre}</td>
+            <td>${rankClub.descripcion}</td>
+            <td>${rankClub.categoria}</td>
+            <td>${rankClub.anio}</td>
+            <td>${rankClub.fechaInicio}</td>
+            <td>${rankClub.fechaFin}</td>
+            <td>
+                <a href="#editRankClub" class="edit" style="color: black">
+                    <i class="bi bi-pencil-square bi-4x"></i>
+                </a>
+                <a href="#deleteRankClub" class="delete" style="color: black">
+                    <i class="bi bi-file-earmark-x bi-4x"></i>
+                </a>
+            </td>
+        `;
+        tbodyRankingClub.appendChild(fila);
+    });
+}
+
+//Cargar Datos Iniciales
+
+// Función para cargar los datos del JSON en la tabla de clubs
+function cargarDatosRankingClubs() {
     fetch('/data/data_rankingC.json')
         .then(response => response.json())
         .then(data => {
-            listaRankingClubes = data.rankingClubes;
-            actualizarTablaRankingClubes();
+            listaRankingClubs = data.rankingClubes;
+            actualizarTablaRankingClub();
         })
-        .catch(error => console.error('Error al cargar los datos del ranking de clubes:', error));
+        .catch(error => console.error('Error al cargar los datos:', error));
+}
 
-    fetch('/data/data_categorias.json')
+// Función para cargar los datos del JSON en la tabla de los deportistas
+function cargarDatosRankingDep() {
+    fetch('/data/data_rankingD.json')
         .then(response => response.json())
         .then(data => {
-            listaCategorias = data.dataCategorias;
-            actualizarSelectCategorias('categoriaRankingInputClub');
+            listaRankingDep = data.rankingDeportistas;
+            actualizarTablaRankingDep();
         })
-        .catch(error => console.error('Error al cargar los datos de las categorías:', error));
+        .catch(error => console.error('Error al cargar los datos:', error));
 }
 
-function actualizarSelectCategorias(selectId) {
-    const categoriaSelect = document.getElementById(selectId);
-    categoriaSelect.innerHTML = '<option value="" disabled selected>Seleccione la categoría</option>';
-    listaCategorias.forEach(categoria => {
-        const opcion = document.createElement('option');
-        opcion.value = categoria;
-        opcion.textContent = categoria;
-        categoriaSelect.appendChild(opcion);
-    });
+//Validaciones
+
+function isValidDate(dateString) {
+    const regexDate = /^\d{4}-\d{2}-\d{2}$/;
+    return regexDate.test(dateString);
 }
 
-function actualizarTablaRankingDeportistas() {
-    const tablaDeportistasBody = document.getElementById('tablaDeportistasBody');
-    tablaDeportistasBody.innerHTML = '';
-    listaRankingDeportistas.forEach(function(ranking) {
-        const fila = document.createElement('tr');
-        fila.innerHTML = `
-            <td>${ranking.id}</td>
-            <td>${ranking.nombre}</td>
-            <td>${ranking.descripcion}</td>
-            <td>${ranking.categoría}</td>
-            <td>${ranking.año}</td>
-            <td>${ranking.fechaInicio}</td>
-            <td>${ranking.fechaFin}</td>
-            <td>
-                <a href="#editRankingDeportista" class="edit" style="color: black">
-                    <i class="bi bi-pencil-square bi-4x"></i>
-                </a>
-                <a href="#deleteRankingDeportista" class="delete" style="color: black">
-                    <i class="bi bi-file-earmark-x bi-4x"></i>
-                </a>
-            </td>
-        `;
-        tablaDeportistasBody.appendChild(fila);
-    });
-}
+function showModal(message) {
+    const modal = document.getElementById('myModal');
+    const modalMessage = document.getElementById('modalMessage');
+    modalMessage.textContent = message;
+    modal.style.display = 'block';
 
-function actualizarTablaRankingClubes() {
-    const tablaClubesBody = document.getElementById('tablaClubesBody');
-    tablaClubesBody.innerHTML = '';
-    listaRankingClubes.forEach(function(ranking) {
-        const fila = document.createElement('tr');
-        fila.innerHTML = `
-            <td>${ranking.id}</td>
-            <td>${ranking.nombre}</td>
-            <td>${ranking.descripcion}</td>
-            <td>${ranking.categoría}</td>
-            <td>${ranking.año}</td>
-            <td>${ranking.fechaInicio}</td>
-            <td>${ranking.fechaFin}</td>
-            <td>
-                <a href="#editRankingClub" class="edit" style="color: black">
-                    <i class="bi bi-pencil-square bi-4x"></i>
-                </a>
-                <a href="#deleteRankingClub" class="delete" style="color: black">
-                    <i class="bi bi-file-earmark-x bi-4x"></i>
-                </a>
-            </td>
-        `;
-        tablaClubesBody.appendChild(fila);
-    });
-}
+    const span = document.getElementsByClassName('close')[0];
+    span.onclick = function() {
+        modal.style.display = 'none';
+    }
 
-function agregarRankingDeportistas(event) {
-    event.preventDefault();
-    const nuevoRanking = {
-        id: listaRankingDeportistas.length + 1,
-        nombre: document.getElementById('nombreRankingInput').value,
-        descripcion: document.getElementById('descripcionRankingInput').value,
-        categoría: document.getElementById('categoriaRankingInput').value,
-        año: document.getElementById('añoRankingInput').value,
-        fechaInicio: document.getElementById('fechaInicioRankingInput').value,
-        fechaFin: document.getElementById('fechaFinRankingInput').value,
-    };
-    listaRankingDeportistas.push(nuevoRanking);
-    actualizarTablaRankingDeportistas();
-    formularioRankingDeportistas.reset();
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    }
+<<<<<<< HEAD
 }
-
-function agregarRankingClubes(event) {
-    event.preventDefault();
-    const nuevoRanking = {
-        id: listaRankingClubes.length + 1,
-        nombre: document.getElementById('nombreRankingInputClub').value,
-        descripcion: document.getElementById('descripcionRankingInputClub').value,
-        categoría: document.getElementById('categoriaRankingInputClub').value,
-        año: document.getElementById('añoRankingInputClub').value,
-        fechaInicio: document.getElementById('fechaInicioRankingInputClub').value,
-        fechaFin: document.getElementById('fechaFinRankingInputClub').value,
-    };
-    listaRankingClubes.push(nuevoRanking);
-    actualizarTablaRankingClubes();
-    formularioRankingClubes.reset();
+=======
 }
+>>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7

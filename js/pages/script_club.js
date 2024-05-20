@@ -34,6 +34,11 @@ function agregarClub(event) {
         return;
     }
 
+    if(!isValidDate(fechaFundacion)){
+        showModal('Fecha no válida. Formato esperado: yyyy-mm-dd');
+        return;
+    }
+
     const nuevoClub = {
         id: listaClubes.length + 1,
         nombre: nombre,
@@ -44,7 +49,7 @@ function agregarClub(event) {
 
     listaClubes.push(nuevoClub);
     actualizarTablaClubes();
-    limpiarFormulario();
+    document.getElementById('formularioClub').reset();
 }
 
 function actualizarTablaClubes() {
@@ -70,16 +75,10 @@ function actualizarTablaClubes() {
     });
 }
 
-function limpiarFormulario() {
-    document.getElementById('nombreClubInput').value = '';
-    document.getElementById('fechaFundacionInput').value = '';
-    document.getElementById('descripcionInput').value = '';
-    document.getElementById('fotoClubInput').value = '';
-}
 
 function showModal(message) {
-    const modal = document.getElementById('myModal'); // Asegúrate de que tienes un modal con este ID
-    const modalMessage = document.getElementById('modalMessage'); // Y un elemento para el mensaje
+    const modal = document.getElementById('myModal'); 
+    const modalMessage = document.getElementById('modalMessage'); 
     modalMessage.textContent = message;
     modal.style.display = 'block';
 
@@ -93,4 +92,10 @@ function showModal(message) {
             modal.style.display = 'none';
         }
     }
+}
+
+// Función para validar el formato de fecha (yyyy-mm-dd)
+function isValidDate(dateString) {
+    const regexDate = /^\d{4}-\d{2}-\d{2}$/;
+    return regexDate.test(dateString);
 }

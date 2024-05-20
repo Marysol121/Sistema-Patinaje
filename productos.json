@@ -1,4 +1,5 @@
-[
+{
+  "dataProductos":[
   {
     "nombre": "Patines para Niños",
     "descripcion": "Patines Ajustables para niños - Patines de deportes al aire libre para niños y niñas - Patines ajustables en línea - Trazador para niños - Ruedas iluminadoras.",
@@ -280,3 +281,4 @@
     "etiquetas": ["hombreCalzado"]
   }
 ]
+}

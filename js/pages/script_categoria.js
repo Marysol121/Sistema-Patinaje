@@ -31,15 +31,15 @@ function agregarCategoria(event) {
         return;
     }
 
-    // if (!isValidDate(fecha)){
-    //     showModal('Fecha no válida. Formato esperado: yyyy-mm-dd');
-    //     return;
-    // }
+    if (!isValidDate(fecha)){
+        showModal('Fecha no válida. Formato esperado: yyyy-mm-dd');
+        return;
+    }
 
-    // if(!isValidEdad(edades)){
-    //     showModal('Edad no válida.')
-    //     return;
-    // }
+    if(!isValidEdad(edades)){
+        showModal('Edad no válida.');
+        return;
+    }
 
     const nuevaCategoria = {
 
@@ -87,8 +87,8 @@ function actualizarTablaCategorias() {
 }
 
 function showModal(message) {
-    const modal = document.getElementById('myModal'); // Asegúrate de que tienes un modal con este ID
-    const modalMessage = document.getElementById('modalMessage'); // Y un elemento para el mensaje
+    const modal = document.getElementById('myModal'); 
+    const modalMessage = document.getElementById('modalMessage');
     modalMessage.textContent = message;
     modal.style.display = 'block';
 
@@ -104,5 +104,16 @@ function showModal(message) {
     }
 }
 
+// Función para validar el formato de fecha (yyyy-mm-dd)
+function isValidDate(dateString) {
+    const regexDate = /^\d{4}-\d{2}-\d{2}$/;
+    return regexDate.test(dateString);
+}
+
+// Función para validar la edad (solo números positivos)
+function isValidEdad(edadString) {
+    const regexEdad = /^\d+$/;
+    return regexEdad.test(edadString);
+}
 
 
