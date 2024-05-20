@@ -29,14 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
         formularioRanking.style.display= 'none';
         formularioEvento.style.display= 'none';
         formularioEtapa.style.display = 'none';
-        formularioRankingDeportistas.style.display = 'none';
-        formularioRankingClubes.style.display = 'none';
+        //formularioRankingDeportistas.style.display = 'none';
+        //formularioRankingClubes.style.display = 'none';
 
         // Mostrar el formulario deseado
         formulario.style.display = 'block';
     }
 
-    function agregarPrueba() {
+   /* function agregarPrueba() {
         const nombre = document.getElementById('nombrePruebaInput').value;
         const descripcion = document.getElementById('descripcionPruebaInput').value;
 
@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
         listaPruebas.push(nuevaPrueba);
         actualizarTablaPruebas();
         formularioPrueba.reset();
-    }
+    }*/
 
-    function agregarCategoria() {
+    /*function agregarCategoria() {
         const nombre = document.getElementById('nombreCategoriaInput').value;
         const descripcion = document.getElementById('descripcionCategoriaInput').value;
         const fecha = document.getElementById('fechaInicioInput').value;
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const sexo = document.getElementById('sexoInput').value;
 
         if (nombre === '' || descripcion === '') {
-            showModal('Por favor, complete todos los campos.');
+            showModal('Categoria - Por favor, complete todos los campos.');
             return;
         }
 
@@ -88,14 +88,14 @@ document.addEventListener('DOMContentLoaded', function() {
         listaCategorias.push(nuevaCategoria);
         actualizarTablaCategorias();
         formularioCategoria.reset();
-    }
+    }*/
 
-    function agregarEtapa() {
+    /*function agregarEtapa() {
         const nombre = document.getElementById('nombreEatapaInput').value;
         const descripcion = document.getElementById('descripcionEtapaInput').value;
 
         if (nombre === '' || descripcion === '') {
-            showModal('Por favor, complete todos los campos.');
+            showModal('Etapa - Por favor, complete todos los campos.');
             return;
         }
 
@@ -107,10 +107,10 @@ document.addEventListener('DOMContentLoaded', function() {
         listaEtapas.push(nuevaEtapa);
         actualizarTablaEtapas();
         formularioEtapa.reset();
-    }
+    }*/
 
     //Agregar Evento
-    function agregarEventos() {
+   /* function agregarEventos() {
         const nombre = document.getElementById('nombreEventoInput').value;
         const descripcion = document.getElementById('descripcionEventoInput').value;
         const fecha = document.getElementById('fechaEventoInput').value;
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const cedulaOrganizador = document.getElementById('cedulaOrganizadorInput').value;
 
         if (nombre === '' || descripcion === '' || nombreOrganizador === '' || apellidosOrganizador === ''  ) {
-            showModal('Por favor, complete todos los campos.');
+            showModal('Evento- Por favor, complete todos los campos.');
             return;
         }
 
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formularioEvento.reset();
     }
 
-    function actualizarTablaPruebas() {
+   /* function actualizarTablaPruebas() {
         const tablaPruebas = document.getElementById('tabla-pruebas').querySelector('tbody');
         tablaPruebas.innerHTML = '';
         listaPruebas.forEach(function(prueba, index) {
@@ -178,9 +178,11 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             tablaPruebas.appendChild(fila);
         });
-    }
+    }*/
 
-    function actualizarTablaCategorias() {
+
+
+    /*function actualizarTablaCategorias() {
         const tablaCategoria = document.getElementById('tabla-categorias').querySelector('tbody');
         tablaCategoria.innerHTML = '';
         listaCategorias.forEach(function(categoria, index) {
@@ -203,9 +205,9 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             tablaCategoria.appendChild(fila);
         });
-    }
+    }*/
 
-    function actualizarTablaEtapas() {
+    /*function actualizarTablaEtapas() {
         const tablaEtapa = document.getElementById('tabla-etapas').querySelector('tbody');
         tablaEtapa.innerHTML = '';
         listaEtapas.forEach(function(etapa, index) {
@@ -226,8 +228,8 @@ document.addEventListener('DOMContentLoaded', function() {
             tablaEtapa.appendChild(fila);
         });
     }
-
-    function actualizarTablaEvento() {
+*/
+    /*function actualizarTablaEvento() {
         const tablaEvento = document.getElementById('tabla-evento').querySelector('tbody');
         tablaEvento.innerHTML = '';
         listaEventos.forEach(function(evento, index) {
@@ -256,29 +258,51 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const tipoRankingSelect = document.getElementById('tipoRankingSelect');
+        const formularioRankingDeportistas = document.getElementById('formularioRankingDeportistas');
+        const formularioRankingClubes = document.getElementById('formularioRankingClubes');
+        cargarDatosIniciales
+
+        tipoRankingSelect.addEventListener('change', function() {
+            const selectedValue = this.value;
+            if (selectedValue === 'deportistas') {
+                formularioRankingDeportistas.style.display = 'block';
+                formularioRankingClubes.style.display = 'none';
+            } else if (selectedValue === 'clubes') {
+                formularioRankingDeportistas.style.display = 'none';
+                formularioRankingClubes.style.display = 'block';
+            }
+        });
+    });
+    
+
     //Agregar prueba
-    formularioPrueba.addEventListener('submit', function(event) {
+   /* formularioPrueba.addEventListener('submit', function(event) {
         event.preventDefault();
         agregarPrueba();
-    });
+    });*/
 
     //Agregar Categoria
-    formularioCategoria.addEventListener('submit', function(event) {
+    /*formularioCategoria.addEventListener('submit', function(event) {
         event.preventDefault();
         agregarCategoria();
-    });
+    });*/
 
     //Agregar Etapa
-    formularioEtapa.addEventListener('submit', function(event) {
+    /*formularioEtapa.addEventListener('submit', function(event) {
         event.preventDefault();
         agregarEtapa();
-    });
+    });*/
 
     //Agregar Evento
-    formularioEvento.addEventListener('submit', function(event) {
+    /*formularioEvento.addEventListener('submit', function(event) {
         event.preventDefault();
         agregarEventos();
-    });
+    });*/
 
     // Event listener para el enlace de Pruebas
     document.querySelector('.sidebar-item a[href="#prueba"]').addEventListener('click', function(event) {
@@ -312,19 +336,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-    // Manejo del botón cancelar en el formulario de deportistas
-    const cancelarFormularioDeportistaBtn = formularioDeportista.querySelector("#cancelarFormulario");
-    cancelarFormularioDeportistaBtn.addEventListener("click", function(event) {
-        event.preventDefault();
-        formularioDeportista.reset();
-    });
-
-    // Manejo del envío del formulario de deportistas
-    formularioDeportista.addEventListener("submit", function(event) {
-        event.preventDefault();
-        // Aquí puedes agregar la lógica para guardar los datos del deportista y actualizar la tabla
-        formularioDeportista.reset(); // Por ahora, solo reseteamos el formulario
-    });
 
 
 
@@ -335,19 +346,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mostrarFormulario(formularioClub);
     });
 
-    // Manejo del botón cancelar en el formulario de deportistas
-    const cancelarFormularioClubBtn = formularioClub.querySelector("#cancelarFormulario");
-    cancelarFormularioClubBtn.addEventListener("click", function(event) {
-        event.preventDefault();
-        formularioClub.reset();
-    });
 
-    // Manejo del envío del formulario de deportistas
-    formularioClub.addEventListener("submit", function(event) {
-        event.preventDefault();
-        // Aquí puedes agregar la lógica para guardar los datos del deportista y actualizar la tabla
-        formularioClub.reset(); // Por ahora, solo reseteamos el formulario
-    });
 
 
 

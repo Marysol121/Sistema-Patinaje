@@ -1,3 +1,6 @@
+{
+    "dataEtapa":
+
 [
     {
         "id": 1,
@@ -20,4 +23,6 @@
         "descripcion": "-10 participantes"
     }
 ]
+
+}
 

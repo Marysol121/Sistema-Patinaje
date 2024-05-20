@@ -94,7 +94,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-4">
                             <h2>Datos de la Prueba</h2>
-                            <form>
+                            <form id="formularioPrueba">
                                 <div class="form-group">
                                     <label for="nombrePruebaInput">Nombre:</label>
                                     <input type="text" class="form-control" id="nombrePruebaInput"
@@ -126,6 +126,8 @@
                             </table>
                         </div>
                     </div>
+                    <script src="../js/pages/script_prueba.js">
+                    </script>
                 </div>
 
                 <!--CATEGORIAS-->
@@ -133,7 +135,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-4">
                             <h2>Datos de la Categoria</h2>
-                            <form>
+                            <form id="formularioCategoria">
                                 <div class="form-group">
                                     <label for="nombreCategoriaInput">Nombre:</label>
                                     <input type="text" class="form-control" id="nombreCategoriaInput" placeholder="Ingrese el nombre">
@@ -179,6 +181,8 @@
                                 <tbody>
                             </table>
                         </div>
+                        <script src="../js/pages/script_categoria.js">
+                        </script>
                     </div>
                 </div>
 
@@ -187,10 +191,10 @@
                     <div class="row">
                         <div class="col-md-6 mb-4">
                             <h2>Datos de la Etapa</h2>
-                            <form>
+                            <form id="formularioEtapa">
                                 <div class="form-group">
                                     <label for="nombreEatapaInput">Nombre:</label>
-                                    <input type="text" class="form-control" id="nombreEatapaInput" placeholder="Ingrese el nombre de la etapa">
+                                    <input type="text" class="form-control" id="nombreEtapaInput" placeholder="Ingrese el nombre de la etapa">
                                 </div>
                                 <div class="form-group">
                                     <label for="descripcionEtapaInput">Descripción:</label>
@@ -214,6 +218,8 @@
                                 <tbody>
                             </table>
                         </div>
+                        <script src="../js/pages/script_etapa.js">
+                        </script>
                     </div>
                 </div>
 
@@ -222,7 +228,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-4">
                             <h2>Datos del Evento</h2>
-                            <form>
+                            <form id="formularioEvento">
                                 <div class="form-group">
                                     <label for="nombreEventoInput">Nombre:</label>
                                     <input type="text" class="form-control" id="nombreEventoInput" placeholder="Ingrese el nombre">
@@ -294,6 +300,8 @@
                                 <tbody>
                             </table>
                         </div>
+                        <script src="../js/pages/script_evento.js">
+                        </script>
                     </div>
                 </div>
 
@@ -304,28 +312,25 @@
                     <div class="row">
                         <div class="col-md-6 mb-4">
                             <h2>Datos del Club</h2>
-                            <form id="formulario_clubes">
-                                <div class="form-group">
-                                    <label for="idClubInput">ID</label>
-                                    <input type="text" class="form-control" id="idClubInput"
-                                        placeholder="Ingrese el ID del club">
-                                </div>
+                            <form id="formularioClub">
                                 <div class="form-group">
                                     <label for="nombreClubInput">Nombre:</label>
                                     <input type="text" class="form-control" id="nombreClubInput"
                                         placeholder="Ingrese el nombre">
                                 </div>
                                 <div class="form-group">
-                                    <label for="fundacionInput">Fecha de Fundación:</label>
-                                    <input type="date" class="form-control" id="fundacionInput">
+                                    <label for="fechaFundacionInput">Fecha de Fundación:</label>
+                                    <input type="date" class="form-control" id="fechaFundacionInput">
                                 </div>
                                 <div class="form-group">
-                                    <label for="descripcionClubInput">Descripción:</label>
-                                    <textarea class="form-control" id="descripcionClubInput" rows="3"
+                                    <label for="descripcionInput">Descripción:</label>
+                                    <textarea class="form-control" id="descripcionInput" rows="3"
                                         placeholder="Ingrese la descripción"></textarea>
                                 </div>
-                                
-                            
+                                <div class="form-group">
+                                    <label for="fotoClubInput">Foto:</label>
+                                    <input type="file" class="form-control" id="fotoClubInput">
+                                </div>
                                 <button type="submit" class="btn btn-primary">Guardar</button>
                                 <button type="button" class="btn btn-secondary" id="cancelarFormulario">Cancelar</button>
                             </form>
@@ -335,22 +340,21 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">ID</th>
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Fecha de Fundación</th>
                                         <th scope="col">Descripción</th>
-                                        <th scope="col">Acciones</th>     
+                                        <th scope="col">Foto</th>
+                                        <th scope="col">Acciones</th>
                                     </tr>
                                 </thead>
-                                <tbody id="tablaCubesBody">
+                                <tbody id="tablaClubesBody">
                                     <!-- Aquí se agregarán las filas de la tabla dinámicamente -->
                                 </tbody>
                             </table>
                         </div>
+                        <script src="../js/pages/script_club.js"></script>
                     </div>
                 </div>
-
-
 
                 
                 <!-- Nuevo formulario de Deportistas -->
@@ -411,6 +415,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        <script src="../js/pages/script_deportista.js"></script>
                     </div>
                 </div>
 
@@ -418,126 +423,98 @@
 
                  <!-- Nuevo formulario de Deportistas -->
                 <!-- formulario_ranking.html -->
-
-                <!-- Nuevo formulario de Deportistas -->
-                <!-- formulario_ranking.html -->
                 <div id="contenedorRanking" class="container-fluid" style="display: none;">
-                    <div class="col-md-12 mb-4">
-                        <h2>Seleccionar Tipo de Ranking</h2>
-                        <select id="tipoRankingSelect" class="form-control">
-                            <option value="" disabled selected>Seleccione el tipo de ranking</option>
-                            <option value="deportistas">Ranking de Deportistas</option>
-                            <option value="clubes">Ranking de Clubes</option>
-                        </select>
-                    </div>
                     <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <h2>Datos del Ranking de Deportistas</h2>
-                            <form id="formularioRankingDeportistas" style="display: block;">
-                                <div class="form-group">
-                                    <label for="nombreRankingInput">Nombre:</label>
-                                    <input type="text" class="form-control" id="nombreRankingInput" placeholder="Ingrese el nombre">
-                                </div>
-                                <div class="form-group">
-                                    <label for="descripcionRankingInput">Descripción:</label>
-                                    <textarea class="form-control" id="descripcionRankingInput" rows="3" placeholder="Ingrese la descripción"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="deporteRankingInput">Deporte:</label>
-                                    <input type="text" class="form-control" id="deporteRankingInput" placeholder="Ingrese el deporte">
-                                </div>
-                                <div class="form-group">
-                                    <label for="añoRankingInput">Año:</label>
-                                    <input type="number" class="form-control" id="añoRankingInput" placeholder="Ingrese el año">
-                                </div>
-                                <div class="form-group">
-                                    <label for="fechaInicioRankingInput">Fecha de Inicio:</label>
-                                    <input type="date" class="form-control" id="fechaInicioRankingInput">
-                                </div>
-                                <div class="form-group">
-                                    <label for="fechaFinRankingInput">Fecha de Fin:</label>
-                                    <input type="date" class="form-control" id="fechaFinRankingInput">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-                                <button type="button" class="btn btn-secondary" id="cancelarFormulario">Cancelar</button>
-                            </form>
+                        <div class="col-md-12 mb-4">
+                            <h2>Seleccionar Tipo de Ranking</h2>
+                            <select id="tipoRankingSelect" class="form-control">
+                                <option value="" disabled selected>Seleccione el tipo de ranking</option>
+                                <option value="deportistas">Ranking de Deportistas</option>
+                                <option value="clubes">Ranking de Clubes</option>
+                            </select>
                         </div>
-                        <div class="col-md-6 mb-4">
-                            <h2>Ránking de Deportistas</h2>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Nombre</th>
-                                            <th>Descripción</th>
-                                            <th>Deporte</th>
-                                            <th>Año</th>
-                                            <th>Fecha de Inicio</th>
-                                            <th>Fecha de Fin</th>
-                                            <th>Acciones</th>
-                                        </tr>
-                                </thead>
-                                <tbody id="tablaDeportistasBody">
-                                    <!-- Aquí se agregarán las filas de la tabla dinámicamente -->
-                                </tbody>
-                            </table>
-                        </div>
+                    </div>
                 
-                    <!-- Formulario de Ranking de Clubes -->
-                        <div class="col-md-6 mb-4">
-                            <h2>Datos del Ranking de Clubes</h2>
-                            <form id="formularioRankingClubes" style="display: block;"">
-                                <div class="form-group">
-                                    <label for="nombreRankingInput">Nombre:</label>
-                                    <input type="text" class="form-control" id="nombreRankingInput" placeholder="Ingrese el nombre">
+                    <!-- Formulario y tabla de Ranking de Deportistas -->
+                    <div id="contenedorRankingDeportistas" style="display: none;">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <h2>Datos del Ranking de Deportistas</h2>
+                                <form id="tipo-ranking-form">
+                                    <select id="tipoRankingSelect">
+                                        <option value="" disabled selected>Seleccione tipo de ranking</option>
+                                        <option value="deportistas">Deportistas</option>
+                                        <option value="clubes">Clubes</option>
+                                    </select>
+                                </form>
+                            
+                                <form id="formularioRankingDeportistas" class="oculto">
+                                    <input type="text" id="nombreRankingInput" name="nombre" placeholder="Nombre" required>
+                                    <input type="text" id="descripcionRankingInput" name="descripcion" placeholder="Descripción" required>
+                                    <select id="categoriaRankingInput" name="categoria" required>
+                                        <option value="" disabled selected>Seleccione la categoría</option>
+                                    </select>
+                                    <input type="number" id="añoRankingInput" name="año" placeholder="Año" required>
+                                    <input type="date" id="fechaInicioRankingInput" name="fechaInicio" required>
+                                    <input type="date" id="fechaFinRankingInput" name="fechaFin" required>
+                                    <button type="submit">Añadir Ranking Deportistas</button>
+                                </form>
+                            
+                                <form id="formularioRankingClubes" class="oculto">
+                                    <input type="text" id="nombreRankingInputClub" name="nombre" placeholder="Nombre" required>
+                                    <input type="text" id="descripcionRankingInputClub" name="descripcion" placeholder="Descripción" required>
+                                    <select id="categoriaRankingInputClub" name="categoria" required>
+                                        <option value="" disabled selected>Seleccione la categoría</option>
+                                    </select>
+                                    <input type="number" id="añoRankingInputClub" name="año" placeholder="Año" required>
+                                    <input type="date" id="fechaInicioRankingInputClub" name="fechaInicio" required>
+                                    <input type="date" id="fechaFinRankingInputClub" name="fechaFin" required>
+                                    <button type="submit">Añadir Ranking Clubes</button>
+                                </form>
+                            
+                                <div id="contenedorRankingDeportistas" class="oculto">
+                                    <h2>Ranking de Deportistas</h2>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nombre</th>
+                                                <th>Descripción</th>
+                                                <th>Categoría</th>
+                                                <th>Año</th>
+                                                <th>Fecha Inicio</th>
+                                                <th>Fecha Fin</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tablaDeportistasBody"></tbody>
+                                    </table>
                                 </div>
-                                <div class="form-group">
-                                    <label for="descripcionRankingInput">Descripción:</label>
-                                    <textarea class="form-control" id="descripcionRankingInput" rows="3" placeholder="Ingrese la descripción"></textarea>
+                            
+                                <div id="contenedorRankingClubes" class="oculto">
+                                    <h2>Ranking de Clubes</h2>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nombre</th>
+                                                <th>Descripción</th>
+                                                <th>Categoría</th>
+                                                <th>Año</th>
+                                                <th>Fecha Inicio</th>
+                                                <th>Fecha Fin</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tablaClubesBody"></tbody>
+                                    </table>
                                 </div>
-                                <div class="form-group">
-                                    <label for="deporteRankingInput">Deporte:</label>
-                                    <input type="text" class="form-control" id="deporteRankingInput" placeholder="Ingrese el deporte">
-                                </div>
-                                <div class="form-group">
-                                    <label for="añoRankingInput">Año:</label>
-                                    <input type="number" class="form-control" id="añoRankingInput" placeholder="Ingrese el año">
-                                </div>
-                                <div class="form-group">
-                                    <label for="fechaInicioRankingInput">Fecha de Inicio:</label>
-                                    <input type="date" class="form-control" id="fechaInicioRankingInput">
-                                </div>
-                                <div class="form-group">
-                                    <label for="fechaFinRankingInput">Fecha de Fin:</label>
-                                    <input type="date" class="form-control" id="fechaFinRankingInput">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Guardar</button>
-                                <button type="button" class="btn btn-secondary" id="cancelarFormulario">Cancelar</button>
-                
-                            </form>
+                            </div>
+                            <script src="../js/pages/script_ranking.js"></script>
                         </div>
-                    <div class="col-md-6 mb-4">
-                        <h2>Ranking de Clubes</h2>
-                        <table id="tabla-ranking-clubes" class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nombre</th>
-                                    <th>Descripción</th>
-                                    <th>Deporte</th>
-                                    <th>Año</th>
-                                    <th>Fecha de Inicio</th>
-                                    <th>Fecha de Fin</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tablaClubesBody">
-                                <!-- Aquí se agregarán las filas de la tabla dinámicamente -->
-                            </tbody>
-                        </table>
                     </div>
                 </div>
+            
 
             </main>
         </div>

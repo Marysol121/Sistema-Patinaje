@@ -24,6 +24,15 @@ body {
     display: flex;
 }
 
+.oculto {
+    display: none;
+}
+
+.block {
+    display: block;
+    margin-bottom: 10px;
+}
+
 .main {
     display: flex;
     flex-direction: column;
