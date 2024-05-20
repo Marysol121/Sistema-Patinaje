@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const formularioRanking = document.querySelector('#contenedorRanking');
     const formularioEvento = document.querySelector('#contenedorEvento');
     const formularioEtapa = document.querySelector('#contenedorEtapa');
-    const formularioRankingClubes = document.querySelector('#contenedorRankingC')
-    const formularioRankingDeportistas = document.querySelector('#contenedorRankingD')
 
 
     let listaPruebas = [];
@@ -357,19 +355,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         mostrarFormulario(formularioRanking);
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const tipoRankingSelect = document.getElementById('tipoRankingSelect');
-            
-            tipoRankingSelect.addEventListener('change', function() {
-                const selectedValue = this.value;
-                if (selectedValue === 'deportistas') {
-                    mostrarFormulario(formularioRankingDeportistas)
-                
-                } else if (selectedValue === 'clubes') {
-                    mostrarFormulario(formularioRankingClubes)
-                }
-            });
-        });
+    
 
 
     });
