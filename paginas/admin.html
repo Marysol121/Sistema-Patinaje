@@ -487,7 +487,73 @@
                         </div>
                     </div>
                 </div>
-                
+                <!-- Nuevo formulario de Tienda -->
+                <!-- formulario_tienda.html -->
+
+                <div id="contenedorTienda" class="container-fluid" style="display: none;">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <h2>Datos de la Tienda</h2>
+                            <form id="formularioTienda">
+                                <div class="form-group">
+                                    <label for="nombreProductoInput">Nombre Producto:</label>
+                                    <input type="text" class="form-control" id="nombreProductoInput"
+                                        placeholder="Ingrese el nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripcionInput">Descripción:</label>
+                                    <input type="text" class="form-control" id="descripcionInput"
+                                        placeholder="Ingrese la descripcion">
+                                </div>
+                                <div class="form-group">
+                                    <label for="precioInput">Precio:</label>
+                                    <input type="text" class="form-control" id="precioInput"
+                                        placeholder="Ingrese el precio del producto:">
+                                </div>
+                                <div class="form-group">
+                                    <label for="stockInput">Stock disponible:</label>
+                                    <input type="text" class="form-control" id="stockInput">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="linkInput">Link de la Imagen:</label>
+                                    <input type="text" class="form-control" id="linkInput">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="etiquetasInput">Ingrese las etiquetas del producto:</label>
+                                    <input type="text" class="form-control" id="etiquetasInput"
+                                        placeholder="En doble comilla, separada por coma.">
+                                </div>
+
+                                <button type="submit" class="btn tiendaGuardar">Guardar</button>
+                                <button type="button" class="btn tiendaLimpiar" id="limpiar">Limpiar</button>
+                            </form>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <h2>Productos</h2>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Descripción</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Stock</th>
+                                        <th scope="col">Link</th>
+                                        <th scope="col">Etiquetas</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaTiendaBody">
+                                    <!-- Aquí se agregarán las filas de la tabla dinámicamente -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <script src="../js/pages/script_tiendaAdmin.js"></script>
+                    </div>
+                </div>
+
+            <!--  ***********************************************************************   -->
+
                 <!-- Contenedor y formulario para Ranking de Clubes -->
                 <div id="contenedorRankingClubes" style="display: none;">
                     <div class="row">

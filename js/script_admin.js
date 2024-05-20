@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const formularioEtapa = document.querySelector('#contenedorEtapa');
     const formularioRankingDeportistas = document.querySelector('#contenedorRankingDeportistas');
     const formularioRankingClubes = document.querySelector('#contenedorRankingClubes');
-
+    const formularioTienda = document.querySelector('#contenedorTienda');
+    
     let listaPruebas = [];
     let listaCategorias = [];
     let listaEtapas = [];
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formularioEtapa.style.display = 'none';
         formularioRankingDeportistas.style.display = 'none';
         formularioRankingClubes.style.display = 'none';
+        formularioTienda.style.display = 'none';
         //formularioRankingDeportistas.style.display = 'none';
         //formularioRankingClubes.style.display = 'none';
 
@@ -349,6 +351,11 @@ document.addEventListener('DOMContentLoaded', function() {
         mostrarFormulario(formularioClub);
     });
 
+    // Event listener para el enlace de eventos
+    document.querySelector('.sidebar-item a[href="#tienda"]').addEventListener('click', function(event) {
+        event.preventDefault();
+        mostrarFormulario(formularioTienda);
+    });
 
 
 
