@@ -35,10 +35,10 @@ function agregarProducto(event) {
     const imagen = document.getElementById('linkInput').value;
     const etiquetas = document.getElementById('etiquetasInput').value;
 
-    if (nombre === '' || descripcion === '' || precio === '' || stock === '' || imagen === '' || etiquetas === '') {
+    /*if (nombre === '' || descripcion === '' || precio === '' || stock === '' || imagen === '' || etiquetas === '') {
         showModal('Por favor, complete todos los campos.');
         return;
-    }
+    }*/
 
     const nuevoProducto = {
         nombre: nombre,
@@ -79,14 +79,7 @@ function actualizarTablaProductos() {
     });
 }
 
-function limpiarFormulario() {
-    document.getElementById('nombreProductoInput').value = '';
-    document.getElementById('descripcionInput').value = '';
-    document.getElementById('precioInput').value = '';
-    document.getElementById('stockInput').value = '';
-    document.getElementById('linkInput').value = '';
-    document.getElementById('etiquetasInput').value = '';
-}
+
 
 function showModal(message) {
     const modal = document.getElementById('myModal'); // Asegúrate de que tienes un modal con este ID
