@@ -9,13 +9,13 @@ const datosClubes = [
         id: 2,
         nombre: "Club Deportivo Los Pinos",
         fechaFundacion: "1985-03-20",
-        descripcion: "Club con enfoque en el fútbol y el baloncesto para jóvenes."
+        descripcion: "Club con enfoque en el patinaje para jóvenes."
     },
     {
         id: 3,
-        nombre: "Club Náutico Marítimo",
+        nombre: "Club Patín",
         fechaFundacion: "1978-09-10",
-        descripcion: "Club especializado en deportes acuáticos como vela y remo."
+        descripcion: "Club especializado en deportes sobre ruedas."
     }
 ];
 
