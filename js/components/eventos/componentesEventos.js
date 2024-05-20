@@ -1,14 +1,17 @@
-import { updateGalleryAndPagination } from "../../utils/scriptEventos.js";
+import {
+  filtrarEventos,
+  updateGalleryAndPagination,
+} from "../../utils/scriptEventos.js";
 
 var respuestaHTML = "";
-export function crearEventos(){
-    respuestaHTML = `<h1>Eventos</h1>
+export function crearEventos() {
+  respuestaHTML = `<h1 id="titulo">Eventos</h1>
   <div class="container">
     <div class="row justify-content-center mb-3">
       <div class="col-md-6">
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-danger" type="submit">Buscar</button>
+          <input class="form-control me-2" type="search" placeholder="Buscar por título" aria-label="Buscar" id="busquedaEventos">
+          <button class="btn btn-danger" id ="btnBusquedaEventos" type="submit">Buscar</button>
         </form>
       </div>
     </div>
@@ -31,7 +34,12 @@ export function crearEventos(){
     </nav>
   </div>`;
   document.getElementById("contenedor").innerHTML = respuestaHTML;
+
+  document
+    .getElementById("btnBusquedaEventos")
+    .addEventListener("click", function (e) {
+      e.preventDefault();
+      filtrarEventos();
+    });
   updateGalleryAndPagination();
-
 }
-

@@ -1,0 +1,27 @@
+[
+    {
+      "src": "img/campeones_infantil_f.jpg",
+      "title": "Campeones Infantil Femenino",
+      "description": "Descripción de la Imagen...",
+      "fecha": "2024-05-01"
+    },
+    {
+      "src": "img/campeones_infantil.jpg",
+      "title": "Campeones Infantil Masculino",
+      "description": "Descripción de la Imagen 2...",
+      "fecha": "2024-05-02"
+    },
+    {
+      "src": "img/campeones_juvenil.jpg",
+      "title": "Campeones Juvenil Masculino",
+      "description": "Descripción de la Imagen 3...",
+      "fecha": "2024-05-03"
+    },
+    {
+      "src": "img/campeones_juvenil_f.jpg",
+      "title": "Campeones Juvenil Femenino",
+      "description": "Descripción de la Imagen 4...",
+      "fecha": "2024-05-04"
+    }
+  ]
+  

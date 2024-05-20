@@ -1,0 +1,166 @@
+{
+    "datosDeportistas": [
+        {
+            "nombre": "Juan",
+            "apellidos": "Pérez González",
+            "cedula": "123456789",
+            "fechaNacimiento": "2010-05-15",
+            "pdfCedula": "pdf_cedula_juan.pdf",
+            "fotoDeportista": "img/deportista_hombre.png",
+            "puntos": 15
+        },
+        {
+            "nombre": "María",
+            "apellidos": "López Martínez",
+            "cedula": "987654321",
+            "fechaNacimiento": "2014-08-25",
+            "pdfCedula": "pdf_cedula_maria.pdf",
+            "fotoDeportista": "img/deportista_mujer.png",
+            "puntos": 18
+        },
+        {
+            "nombre": "Carlos",
+            "apellidos": "Sánchez Rodríguez",
+            "cedula": "456123789",
+            "fechaNacimiento": "2007-11-10",
+            "pdfCedula": "pdf_cedula_carlos.pdf",
+            "fotoDeportista": "img/deportista_hombre.png",
+            "puntos": 46
+        },
+        {
+            "nombre": "Ana",
+            "apellidos": "García Fernández",
+            "cedula": "321654987",
+            "fechaNacimiento": "2012-02-14",
+            "pdfCedula": "pdf_cedula_ana.pdf",
+            "fotoDeportista": "img/deportista_mujer.png",
+            "puntos": 36
+        },
+        {
+            "nombre": "Luis",
+            "apellidos": "Martínez Gómez",
+            "cedula": "654987321",
+            "fechaNacimiento": "2011-07-23",
+            "pdfCedula": "pdf_cedula_luis.pdf",
+            "fotoDeportista": "img/deportista_hombre.png",
+            "puntos": 48
+        },
+        {
+            "nombre": "Elena",
+            "apellidos": "Torres López",
+            "cedula": "789123456",
+            "fechaNacimiento": "2010-09-05",
+            "pdfCedula": "pdf_cedula_elena.pdf",
+            "fotoDeportista": "img/deportista_mujer.png",
+            "puntos": 96
+        },
+        {
+            "nombre": "Pablo",
+            "apellidos": "González Ruiz",
+            "cedula": "147258369",
+            "fechaNacimiento": "2009-04-18",
+            "pdfCedula": "pdf_cedula_pablo.pdf",
+            "fotoDeportista": "img/deportista_hombre.png",
+            "puntos": 47
+        },
+        {
+            "nombre": "Lucía",
+            "apellidos": "Sánchez Pérez",
+            "cedula": "963852741",
+            "fechaNacimiento": "2008-12-30",
+            "pdfCedula": "pdf_cedula_lucia.pdf",
+            "fotoDeportista": "img/deportista_mujer.png",
+            "puntos": 25
+        },
+        {
+            "nombre": "Fernando",
+            "apellidos": "Ramírez Torres",
+            "cedula": "258369147",
+            "fechaNacimiento": "2013-03-11",
+            "pdfCedula": "pdf_cedula_fernando.pdf",
+            "fotoDeportista": "img/deportista_hombre.png",
+            "puntos": 25
+        },
+        {
+            "nombre": "Isabel",
+            "apellidos": "Gómez Díaz",
+            "cedula": "852963741",
+            "fechaNacimiento": "2006-06-25",
+            "pdfCedula": "pdf_cedula_isabel.pdf",
+            "fotoDeportista": "img/deportista_mujer.png",
+            "puntos": 18
+        },
+        {
+            "nombre": "Ricardo",
+            "apellidos": "Fernández Moreno",
+            "cedula": "123789456",
+            "fechaNacimiento": "2007-08-15",
+            "pdfCedula": "pdf_cedula_ricardo.pdf",
+            "fotoDeportista": "img/deportista_hombre.png",
+            "puntos":9
+        },
+        {
+            "nombre": "Sara",
+            "apellidos": "Jiménez Ortega",
+            "cedula": "789654123",
+            "fechaNacimiento": "2009-10-20",
+            "pdfCedula": "pdf_cedula_sara.pdf",
+            "fotoDeportista": "img/deportista_mujer.png",
+            "puntos": 17
+        },
+        {
+            "nombre": "David",
+            "apellidos": "López Hernández",
+            "cedula": "654321987",
+            "fechaNacimiento": "2014-11-12",
+            "pdfCedula": "pdf_cedula_david.pdf",
+            "fotoDeportista": "img/deportista_hombre.png",
+            "puntos": 24
+        },
+        {
+            "nombre": "Laura",
+            "apellidos": "Martínez Ruiz",
+            "cedula": "321987654",
+            "fechaNacimiento": "2012-01-01",
+            "pdfCedula": "pdf_cedula_laura.pdf",
+            "fotoDeportista": "img/deportista_mujer.png",
+            "puntos": 31
+        },
+        {
+            "nombre": "Hugo",
+            "apellidos": "Pérez García",
+            "cedula": "147369258",
+            "fechaNacimiento": "2006-05-22",
+            "pdfCedula": "pdf_cedula_hugo.pdf",
+            "fotoDeportista": "img/deportista_hombre.png",
+            "puntos": 32
+        },
+        {
+            "nombre": "Carmen",
+            "apellidos": "González Martín",
+            "cedula": "258147369",
+            "fechaNacimiento": "2008-03-14",
+            "pdfCedula": "pdf_cedula_carmen.pdf",
+            "fotoDeportista": "img/deportista_mujer.png",
+            "puntos": 14
+        },
+        {
+            "nombre": "Alberto",
+            "apellidos": "Díaz Sánchez",
+            "cedula": "369258147",
+            "fechaNacimiento": "2007-09-09",
+            "pdfCedula": "pdf_cedula_alberto.pdf",
+            "fotoDeportista": "img/deportista_hombre.png",
+            "puntos": 15
+        },
+        {
+            "nombre": "Sofía",
+            "apellidos": "Méndez Fernández",
+            "cedula": "741852963",
+            "fechaNacimiento": "2011-04-04",
+            "pdfCedula": "pdf_cedula_sofia.pdf",
+            "fotoDeportista": "img/deportista_mujer.png",
+            "puntos": 19
+        }
+    ]
+}

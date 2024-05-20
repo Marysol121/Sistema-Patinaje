@@ -1,0 +1,124 @@
+{
+    "datosClubes": [
+        {
+            "id": 1,
+            "nombre": "Club Atlético",
+            "fechaFundacion": "1990-06-15",
+            "descripcion": "Club dedicado a la promoción del deporte en la comunidad local.",
+            "foto": "img/logo_club_1.jpg",
+            "puntos": 36
+        },
+        {
+            "id": 2,
+            "nombre": "Club Deportivo Los Pinos",
+            "fechaFundacion": "1985-03-20",
+            "descripcion": "Club con enfoque en el patinaje para jóvenes.",
+            "foto": "img/logo_club_2.jpg",
+            "puntos": 45
+        },
+        {
+            "id": 3,
+            "nombre": "Club Patín",
+            "fechaFundacion": "1978-09-10",
+            "descripcion": "Club especializado en deportes sobre ruedas.",
+            "foto": "img/logo_club_3.jpg",
+            "puntos": 69
+        },
+        {
+            "id": 4,
+            "nombre": "Club Aurora",
+            "fechaFundacion": "1982-11-05",
+            "descripcion": "Club reconocido por su excelencia en el patinaje artístico.",
+            "foto": "img/logo_club_1.jpg",
+            "puntos": 47
+        },
+        {
+            "id": 5,
+            "nombre": "Club Estrella",
+            "fechaFundacion": "1995-07-18",
+            "descripcion": "Club dedicado a formar jóvenes talentos en el patinaje artístico.",
+            "foto": "img/logo_club_2.jpg",
+            "puntos": 58
+        },
+        {
+            "id": 6,
+            "nombre": "Club Ruedas de Oro",
+            "fechaFundacion": "1988-04-30",
+            "descripcion": "Club con una larga tradición en el patinaje artístico.",
+            "foto": "img/logo_club_3.jpg",
+            "puntos": 85
+        },
+        {
+            "id": 7,
+            "nombre": "Club Patinando Juntos",
+            "fechaFundacion": "1992-10-12",
+            "descripcion": "Club comprometido con la inclusión y el trabajo en equipo.",
+            "foto": "img/logo_club_1.jpg",
+            "puntos": 47
+        },
+        {
+            "id": 8,
+            "nombre": "Club Estilo Patín",
+            "fechaFundacion": "1975-08-27",
+            "descripcion": "Club conocido por su estilo único en el patinaje artístico.",
+            "foto": "img/logo_club_2.jpg",
+            "puntos": 63
+        },
+        {
+            "id": 9,
+            "nombre": "Club Patinadores Unidos",
+            "fechaFundacion": "1986-12-03",
+            "descripcion": "Club que promueve la camaradería entre los patinadores.",
+            "foto": "img/logo_club_3.jpg",
+            "puntos": 47
+        },
+        {
+            "id": 10,
+            "nombre": "Club Mariposas sobre Ruedas",
+            "fechaFundacion": "1993-05-09",
+            "descripcion": "Club donde las habilidades de los patinadores brillan como mariposas.",
+            "foto": "img/logo_club_1.jpg",
+            "puntos": 89
+        },
+        {
+            "id": 11,
+            "nombre": "Club Patinaje Creativo",
+            "fechaFundacion": "1980-02-14",
+            "descripcion": "Club que fomenta la creatividad en el patinaje artístico.",
+            "foto": "img/logo_club_2.jpg",
+            "puntos": 78
+        },
+        {
+            "id": 12,
+            "nombre": "Club Patinadores Independientes",
+            "fechaFundacion": "1997-09-28",
+            "descripcion": "Club formado por patinadores que valoran su libertad.",
+            "foto": "img/logo_club_3.jpg",
+            "puntos": 67
+        },
+        {
+            "id": 13,
+            "nombre": "Club Estrellas sobre Hielo",
+            "fechaFundacion": "1983-06-08",
+            "descripcion": "Club que lleva el patinaje artístico a un nuevo nivel sobre hielo.",
+            "foto": "img/logo_club_1.jpg",
+            "puntos": 56
+        },
+        {
+            "id": 14,
+            "nombre": "Club Patinadores Veloces",
+            "fechaFundacion": "1991-11-17",
+            "descripcion": "Club especializado en patinaje de velocidad y precisión.",
+            "foto": "img/logo_club_2.jpg",
+            "puntos": 45
+        },
+        {
+            "id": 15,
+            "nombre": "Club Patinadores Extremos",
+            "fechaFundacion": "1987-04-22",
+            "descripcion": "Club donde los límites del patinaje son desafiados.",
+            "foto": "img/logo_club_3.jpg",
+            "puntos": 65
+        }
+    ]
+}

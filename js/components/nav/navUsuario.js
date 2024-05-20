@@ -7,7 +7,7 @@ import {
 } from "../../pages/paginaUsuario.js";
 import { crearInicio } from "../inicio/componentesInicio.js";
 import { crearCarrito } from "../tienda/componentesCarrito.js";
-//import { crearRankings } from "../rankings/componentesRankings.js";
+import { crearRankings } from "../rankings/componentesRankings.js";
 
 export function crearNavUsuario() {
   //var nav = document.getElementById("nav");
@@ -53,19 +53,16 @@ export function crearNavUsuario() {
           </ul>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item fs-4">
-              <a class="nav-link active py-0" href="#" id="linkNoticias">Noticias</a>
+              <a class="nav-link  py-0" href="#" id="linkNoticias">Noticias</a>
             </li>
             <li class="nav-item  fs-4">
-              <a class="nav-link active py-0" href="#" id="linkEventos">Eventos</a>
+              <a class="nav-link  py-0" href="#" id="linkEventos">Eventos</a>
             </li>
             <li class="nav-item  fs-4">
-              <a class="nav-link active py-0" href="#" id="linkRankings">Rankings</a>
+              <a class="nav-link  py-0" href="#" id="linkRankings">Rankings</a>
             </li>
             <li class="nav-item  fs-4">
-              <a class="nav-link active py-0" href="#" id="linkLineamientos">Lineamientos</a>
-            </li>
-            <li class="nav-item  fs-4">
-              <a class="nav-link active py-0" href="#" id="linkTienda">Tienda</a>
+              <a class="nav-link  py-0" href="#" id="linkTienda">Tienda</a>
             </li>
             <li class="nav-item mx-2 ">
               <a class="nav-link py-0" href="#" id="linkTienda2"><i class="bi bi-cart fs-4"></i>
@@ -118,5 +115,12 @@ export function crearNavUsuario() {
     .addEventListener("click", function (event) {
       event.preventDefault();
       //crearRankings();
+    });
+
+    document
+    .getElementById("linkRankings")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      crearRankings();
     });
 }

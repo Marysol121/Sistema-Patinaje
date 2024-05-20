@@ -47,7 +47,7 @@ export function cargarProductos() {
     .then(response => response.json())
     .then(data => {
         // Corrige la función de mapeo de los productos
-        let productos = data.dataProductos.map(producto => ({
+        productos = data.dataProductos.map(producto => ({
             ...producto,
         }));
         mostrarProductos(productos.slice(0, 9)); // Mostrar los primeros 9 productos

@@ -1,52 +1,19 @@
+import { cargarEventos, cargarNoticias } from "../../pages/paginaUsuario.js";
+import { cargarNoticiasCarousel } from "../../utils/scriptInicio.js";
+
 var respuestaHTML = "";
+
+
 
 
 export function crearInicio(){
 
-    carruselImagenes();
-    ultimasNoticiasEventos();
-    document.getElementById("contenedor").innerHTML = respuestaHTML;
-
-}
-
-
-function carruselImagenes(){
-
-
-    
     respuestaHTML = ` 
-    <div class="row border">
-        <div id="carouselExampleCaptions" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
+    <div class="row border container-fluid mx-0">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators" id="carousel-indicators">
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="img/imagenAdminNav.jpg" class=" rounded mx-auto d-block" alt="..." width="1300" height="400">
-                    <div class="carousel-caption d-none d-md-block text-black">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="img/logo.png" class=" rounded mx-auto d-block" alt="..." width="1300" height="400">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="img/logo.png" class=" rounded mx-auto d-block" alt="..." width="1300" height="400">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                </div>
+            <div class="carousel-inner" id="carousel-inner">
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
                 data-bs-slide="prev">
@@ -59,23 +26,16 @@ function carruselImagenes(){
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-    </div>`
-    
-    
-}
-
-
-function ultimasNoticiasEventos(){
-    respuestaHTML += `    
+    </div>  
     <div class="container-fluid text-center">
-        <div class="row justify-content-around ">
-            <div class="col-7 border">
-                <img src="img/logo.png" class="img-fluid " alt="...">
-            </div>
-            <div class="col-5 border">
-                <img src="img/logo.png" class="img-fluid" alt="...">
-            </div>
+        <div class="row justify-content-around" id="ultimoEventoNoticia" >
+    
         </div>
     </div>`
+document.getElementById("contenedor").innerHTML = respuestaHTML;
+
+
+cargarNoticiasCarousel();
+
 
 }

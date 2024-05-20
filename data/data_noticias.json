@@ -1,0 +1,38 @@
+[
+  {
+    "src": "img/noticia_2.jpg",
+    "title": "Título de la Imagen 1",
+    "description": "Descripción de la Imagen 1...",
+    "fecha": "2024-05-01"
+  },
+  {
+    "src": "img/noticia_1.jpg",
+    "title": "Título de la Imagen 2",
+    "description": "Descripción de la Imagen 2...",
+    "fecha": "2024-05-02"
+  },
+  {
+    "src": "img/noticia_3.jpg",
+    "title": "Título de la Imagen 3",
+    "description": "Descripción de la Imagen 3...",
+    "fecha": "2024-05-03"
+  },
+  {
+    "src": "img/noticia_4.jpg",
+    "title": "Título de la Imagen 4",
+    "description": "Descripción de la Imagen 4...",
+    "fecha": "2024-05-04"
+  },
+  {
+    "src": "img/noticia_5.jpg",
+    "title": "Título de la Imagen 5",
+    "description": "Descripción de la Imagen 5...",
+    "fecha": "2024-05-05"
+  },
+  {
+    "src": "img/noticia_6.jpg",
+    "title": "Título de la Imagen 6",
+    "description": "Descripción de la Imagen 6...",
+    "fecha": "2024-05-06"
+  }
+]

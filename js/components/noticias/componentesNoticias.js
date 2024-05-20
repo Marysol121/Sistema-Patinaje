@@ -1,14 +1,17 @@
-import { updateGalleryAndPagination } from "../../utils/scriptNoticias.js";
+import {
+  filtrarNoticias,
+  updateGalleryAndPagination,
+} from "../../utils/scriptNoticias.js";
 
 var respuestaHTML = "";
-export function crearNoticias(){
-    respuestaHTML = `<h1>Noticias</h1>
-    <div class="container">
+export function crearNoticias() {
+  respuestaHTML = `<h1 id="titulo">Noticias</h1>
+    <div class="container container-fluid">
     <div class="row justify-content-center mb-3">
       <div class="col-md-6">
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-danger" type="submit">Buscar</button>
+          <input class="form-control me-2" type="search" placeholder="Buscar por título" aria-label="Buscar" id="busquedaNoticias">
+          <button class="btn btn-danger" id="btnBusquedaNoticias" type="submit">Buscar</button>
         </form>
       </div>
     </div>
@@ -30,7 +33,16 @@ export function crearNoticias(){
       </ul>
     </nav>
   </div>`;
-    document.getElementById("contenedor").innerHTML = respuestaHTML;
-    updateGalleryAndPagination();
+  document.getElementById("contenedor").innerHTML = respuestaHTML;
+
+  document
+    .getElementById("btnBusquedaNoticias")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      filtrarNoticias();
+    });
+
+  updateGalleryAndPagination();
+
 
 }
