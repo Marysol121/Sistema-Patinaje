@@ -31,22 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //Cargar Datos iniciales de Categorias
 function cargarDatosInicialesCategorias(nombreSelec) {
-<<<<<<< HEAD
-<<<<<<< HEAD
     const selectCategoria = document.getElementById(nombreSelec);
 
-    
-
-=======
->>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
-=======
->>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
-    fetch('/data/data_categorias.json')
+    fetch('/data/data_categoriasRanking.json')
         .then(response => response.json())
         .then(data => {
-            const listaCategorias = data.dataCategorias;
-<<<<<<< HEAD
-<<<<<<< HEAD
+            const listaCategoriasA = data.dataCategorias;
 
             // Limpiar el contenido actual del select
             selectCategoria.innerHTML = '';
@@ -58,42 +48,19 @@ function cargarDatosInicialesCategorias(nombreSelec) {
             selectCategoria.appendChild(optionInicial);
 
             // Agregar opciones desde el JSON
-=======
-=======
->>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
-            const selectCategoria = document.getElementById(nombreSelec);
-            
-            selectCategoria.innerHTML = '<option value="" disabled selected>Seleccione una categoría</option>';
-            
-<<<<<<< HEAD
->>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
-=======
->>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
-            listaCategorias.forEach(categoria => {
+            listaCategoriasA.forEach(i => {
                 const option = document.createElement('option');
-                option.value = categoria.nombre;
-                option.textContent = categoria.nombre;
+                option.value = i.nombre;
+                option.textContent = i.nombre;
                 selectCategoria.appendChild(option);
             });
         })
         .catch(error => console.error('Error al cargar los datos:', error));
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 
 //Agregar el ranking de los deportistas
-=======
-//Agregar el ranking de los deportistas
-let listaRankingDep = [];
-
->>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
-=======
-//Agregar el ranking de los deportistas
-let listaRankingDep = [];
-
->>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
 function agregarDeportista(event) {
     event.preventDefault();
 
@@ -154,16 +121,6 @@ function actualizarTablaRankingDep() {
 }
 
 //Agregar Ranking de los clubs
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-let listaRankingClubs = [];
-
->>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
-=======
-let listaRankingClubs = [];
-
->>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
 function agregarClubs(event) {
     event.preventDefault();
 
@@ -277,11 +234,4 @@ function showModal(message) {
             modal.style.display = 'none';
         }
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
-=======
-=======
->>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
-}
->>>>>>> 6a3fb998a0dd910780bba45a3d7c000e35b887c7
