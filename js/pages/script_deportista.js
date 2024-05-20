@@ -32,8 +32,18 @@ function agregarDeportista(event) {
     const fotoCedula = document.getElementById('fotoCedulaInput').files[0];
     const fotoDeportista = document.getElementById('fotoDeportistaInput').files[0];
 
-    if (nombre === '' || apellidos === '' || cedula === '' || fechaNacimiento === '' || !fotoCedula || !fotoDeportista) {
+    if (nombre === '' || apellidos === '' || !fotoCedula || !fotoDeportista) {
         showModal('Por favor, complete todos los campos.');
+        return;
+    }
+
+    if(!isValidCedula(cedula)){
+        showModal('Cédula no válida.');
+        return;
+    }
+
+    if(!isValidDate(fechaNacimiento)){
+        showModal('Fecha no válida. Formato esperado: yyyy-mm-dd');
         return;
     }
 
@@ -48,7 +58,7 @@ function agregarDeportista(event) {
 
     listaDeportistas.push(nuevoDeportista);
     actualizarTablaDeportistas();
-    limpiarFormulario();
+    document.getElementById('formularioDeportista').reset();
 }
 
 function actualizarTablaDeportistas() {
@@ -76,15 +86,6 @@ function actualizarTablaDeportistas() {
     });
 }
 
-function limpiarFormulario() {
-    document.getElementById('nombreDeportistaInput').value = '';
-    document.getElementById('apellidosDeportistaInput').value = '';
-    document.getElementById('cedulaDeportistaInput').value = '';
-    document.getElementById('fechaNacimientoInput').value = '';
-    document.getElementById('fotoCedulaInput').value = '';
-    document.getElementById('fotoDeportistaInput').value = '';
-}
-
 function showModal(message) {
     const modal = document.getElementById('myModal'); // Asegúrate de que tienes un modal con este ID
     const modalMessage = document.getElementById('modalMessage'); // Y un elemento para el mensaje
@@ -101,4 +102,48 @@ function showModal(message) {
             modal.style.display = 'none';
         }
     }
+}
+
+// Función para validar el formato de fecha (yyyy-mm-dd)
+function isValidDate(dateString) {
+    const regexDate = /^\d{4}-\d{2}-\d{2}$/;
+    return regexDate.test(dateString);
+}
+
+// Función para validar la edad (solo números positivos)
+function isValidEdad(edadString) {
+    const regexEdad = /^\d+$/;
+    return regexEdad.test(edadString);
+}
+
+// Función para validar la cédula
+function isValidCedula(cedula) {
+    if (cedula.length !== 10 || isNaN(cedula)) {
+        return false;
+    }
+
+    const provincia = parseInt(cedula.substring(0, 2));
+    if (provincia < 0 || provincia > 24) {
+        return false;
+    }
+
+    const tercerDigito = parseInt(cedula.charAt(2));
+    if (tercerDigito > 5) {
+        return false;
+    }
+
+    // Calcular el dígito verificador
+    const coeficientes = [2, 1, 2, 1, 2, 1, 2, 1, 2];
+    let suma = 0;
+    for (let i = 0; i < 9; i++) {
+        let valor = parseInt(cedula.charAt(i)) * coeficientes[i];
+        if (valor >= 10) {
+            valor -= 9;
+        }
+        suma += valor;
+    }
+    const digitoVerificador = (10 - (suma % 10)) % 10;
+
+    const ultimoDigito = parseInt(cedula.charAt(9));
+    return digitoVerificador === ultimoDigito;
 }

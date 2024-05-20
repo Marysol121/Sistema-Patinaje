@@ -64,8 +64,8 @@ function actualizarTablaPruebas() {
 }
 
 function showModal(message) {
-    const modal = document.getElementById('myModal'); // Asegúrate de que tienes un modal con este ID
-    const modalMessage = document.getElementById('modalMessage'); // Y un elemento para el mensaje
+    const modal = document.getElementById('myModal'); 
+    const modalMessage = document.getElementById('modalMessage');
     modalMessage.textContent = message;
     modal.style.display = 'block';
 

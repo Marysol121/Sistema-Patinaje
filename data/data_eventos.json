@@ -2,6 +2,7 @@
     "dataEventos": [
         {
             "id": 1,
+            "fotoDeportista": "foto_deportista_juan.jpg",
             "nombre": "Campeonato Abierto de Patinaje de Carreras",
             "fecha": "2024-06-20",
             "descripcion": "Todas las Categorías",
@@ -13,6 +14,7 @@
         },
         {
             "id": 2,
+            "fotoDeportista": "foto_deportista_juan.jpg",
             "nombre": "Selectivo Campeonato Nacional de Cadetes",
             "fecha": "2024-08-22",
             "descripcion": "Selectivo para la Selección de la Provincia del Azuay",
@@ -24,6 +26,7 @@
         },
         {
             "id": 3,
+            "fotoDeportista": "foto_deportista_juan.jpg",
             "nombre": "Torneo Infantil de Natación",
             "fecha": "2024-09-10",
             "descripcion": "Competencia para niños de 8 a 12 años",

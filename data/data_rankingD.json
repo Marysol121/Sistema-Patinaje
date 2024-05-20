@@ -7,8 +7,7 @@
             "descripcion": "N/A",
             "categoría": "INFANTIL FEMENINO",
             "año": 2024,
-            "fechaInicio": "2024-01-01",
-            "fechaFin": "2024-12-31"
+            "fechaInicio": "2024-01-01"
         },
         {
             "id": 2,
@@ -16,8 +15,7 @@
             "descripcion": "N/A",
             "categoría": "JUVENIL FEMENINO",
             "año": 2024,
-            "fechaInicio": "2024-02-01",
-            "fechaFin": "2024-11-30"
+            "fechaInicio": "2024-02-01"
         },
         {
             "id": 3,
@@ -34,8 +32,7 @@
             "descripcion": "N/A",
             "categoría": "PRE-INFANTIL FEMENINO",
             "año": 2024,
-            "fechaInicio": "2024-04-01",
-            "fechaFin": "2024-09-30"
+            "fechaInicio": "2024-04-01"
         },
         {
             "id": 5,
@@ -43,8 +40,7 @@
             "descripcion": "N/A",
             "categoría": "JUVENIL MASCULINO",
             "año": 2024,
-            "fechaInicio": "2024-05-01",
-            "fechaFin": "2024-08-31"
+            "fechaInicio": "2024-05-01"
         }
 
     ]

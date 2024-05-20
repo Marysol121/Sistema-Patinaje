@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
         formularioRanking.style.display= 'none';
         formularioEvento.style.display= 'none';
         formularioEtapa.style.display = 'none';
-        //formularioRankingDeportistas.style.display = 'none';
-        //formularioRankingClubes.style.display = 'none';
+        formularioRankingDeportistas.style.display = 'none';
+        formularioRankingClubes.style.display = 'none';
 
         // Mostrar el formulario deseado
         formulario.style.display = 'block';
