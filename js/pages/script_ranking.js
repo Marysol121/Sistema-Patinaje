@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
             contenedorRankingDeportistas.style.display = 'none';
             contenedorRankingClubes.style.display = 'block';
             cargarDatosInicialesCategorias('categoriaRankingInputClubes');
+            const formularioClubs = document.getElementById('formularioRankingClubes');
+            formularioClubs.addEventListener('submit', agregarClubs);
         } else {
             contenedorRankingDeportistas.style.display = 'none';
             contenedorRankingClubes.style.display = 'none';
@@ -22,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+//Cargar Datos iniciales de Categorias
 function cargarDatosInicialesCategorias(nombreSelec) {
     fetch('/data/data_categorias.json')
         .then(response => response.json())
@@ -41,24 +44,7 @@ function cargarDatosInicialesCategorias(nombreSelec) {
         .catch(error => console.error('Error al cargar los datos:', error));
 }
 
-function showModal(message) {
-    const modal = document.getElementById('myModal');
-    const modalMessage = document.getElementById('modalMessage');
-    modalMessage.textContent = message;
-    modal.style.display = 'block';
-
-    const span = document.getElementsByClassName('close')[0];
-    span.onclick = function() {
-        modal.style.display = 'none';
-    }
-
-    window.onclick = function(event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    }
-}
-
+//Agregar el ranking de los deportistas
 let listaRankingDep = [];
 
 function agregarDeportista(event) {
@@ -120,7 +106,95 @@ function actualizarTablaRankingDep() {
     });
 }
 
+//Agregar Ranking de los clubs
+let listaRankingClubs = [];
+
+function agregarClubs(event) {
+    event.preventDefault();
+
+    const nombre = document.getElementById('nombreRankingInputClubes').value;
+    const descripcion = document.getElementById('descripcionRankingInputClubes').value;
+    const categoria = document.getElementById('categoriaRankingInputClubes').value;
+    const anio = document.getElementById('añoRankingInputClubes').value;
+    const fechaInicio = document.getElementById('fechaInicioRankingInputClubes').value;
+    const fechaFin = document.getElementById('fechaFinRankingInputClubes').value;
+
+    if (nombre === '' || descripcion === '' || anio === '') {
+        showModal('Por favor, complete todos los campos.');
+        return;
+    }
+
+    if (!isValidDate(fechaInicio)) {
+        showModal('Fecha Inicial no válida. Formato esperado: yyyy-mm-dd');
+        return;
+    }
+
+    if (!isValidDate(fechaFin)) {
+        showModal('Fecha Final no válida. Formato esperado: yyyy-mm-dd');
+        return;
+    }
+
+    const nuevoRankingClub = {
+        id: listaRankingClubs.length + 1,
+        nombre: nombre,
+        descripcion: descripcion,
+        categoria: categoria,
+        anio: anio,
+        fechaInicio: fechaInicio,
+        fechaFin: fechaFin
+    };
+
+    listaRankingClubs.push(nuevoRankingClub);
+    actualizarTablaRankingClub();
+
+    document.getElementById('formularioRankingClubes').reset();
+}
+
+function actualizarTablaRankingClub() {
+    const tbodyRankingClub = document.getElementById('tablaClubesBody');
+    tbodyRankingClub.innerHTML = '';
+    listaRankingClubs.forEach(function(rankClub) {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${rankClub.id}</td>
+            <td>${rankClub.nombre}</td>
+            <td>${rankClub.descripcion}</td>
+            <td>${rankClub.categoria}</td>
+            <td>${rankClub.anio}</td>
+            <td>${rankClub.fechaInicio}</td>
+            <td>${rankClub.fechaFin}</td>
+            <td>
+                <a href="#editRankClub" class="edit" style="color: black">
+                    <i class="bi bi-pencil-square bi-4x"></i>
+                </a>
+                <a href="#deleteRankClub" class="delete" style="color: black">
+                    <i class="bi bi-file-earmark-x bi-4x"></i>
+                </a>
+            </td>
+        `;
+        tbodyRankingClub.appendChild(fila);
+    });
+}
+
 function isValidDate(dateString) {
     const regexDate = /^\d{4}-\d{2}-\d{2}$/;
     return regexDate.test(dateString);
+}
+
+function showModal(message) {
+    const modal = document.getElementById('myModal');
+    const modalMessage = document.getElementById('modalMessage');
+    modalMessage.textContent = message;
+    modal.style.display = 'block';
+
+    const span = document.getElementsByClassName('close')[0];
+    span.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    }
 }
