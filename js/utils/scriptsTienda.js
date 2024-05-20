@@ -31,7 +31,11 @@ function asignarEventos() {
             const productoDiv = boton.closest('.producto');
             const nombre = productoDiv.querySelector('h3').textContent;
             const precio = parseFloat(productoDiv.querySelector('span').textContent.replace('Precio: $', ''));
-            const producto = { nombre, precio };
+            const imagen = productoDiv.querySelector('img').src;
+            const descripcion = productoDiv.querySelector('.descripcion').textContent; // Asumiendo que tienes una descripción
+
+            // Crear objeto producto con todos los atributos necesarios
+            const producto = { nombre, precio, imagen, descripcion };
             agregarAlCarrito(producto);
         });
     });

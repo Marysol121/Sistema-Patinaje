@@ -61,3 +61,27 @@ function actualizarNumeroCarrito() {
     const numeroCarrito = carrito.length;
     localStorage.setItem('numeroCarrito', numeroCarrito); // Guardar el número de productos en localStorage
 }
+
+
+export function configurarPayPal() {
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+            // Aquí puedes obtener el total del carrito dinámicamente
+            const carrito =  JSON.parse(localStorage.getItem('carrito')) || [];
+            const totalCarrito = carrito.reduce((total, producto) => total + producto.precio, 0).toFixed(2);
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: totalCarrito // Pasar el total del carrito dinámicamente
+                    }
+                }]
+            });
+        },
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                // Aquí puedes mostrar un mensaje de confirmación o redirigir a otra página de agradecimiento
+                alert('Pago completado con éxito. Gracias por tu compra!');
+            });
+        }
+    }).render('#paypal-button-container');
+}
