@@ -25,13 +25,13 @@ export function crearNavUsuario() {
                       <a class="link-light" href="../paginas/login.html" >Inicio Sesión</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link py-0" href="#"><i class="bi bi-instagram fs-5"></i></a>
+                    <a class="nav-link py-0" href="https://www.instagram.com/federaciondeportivadelazuay"><i class="bi bi-instagram fs-5"></i></a>
                     </li>
                   <li class="nav-item">
-                    <a class="nav-link py-0" href="#"><i class="bi bi-facebook fs-5"></i></a>
+                    <a class="nav-link py-0" href="https://www.facebook.com/p/Asociaci%C3%B3n-de-Patinaje-del-Azuay-100063600935781/?paipv=0&eav=AfbpsMl29-ZZj32LTSijd3JBkCkfLJvoBTVkXgYTdMhnnSg7lpPBgqtIhwms-S-TUpk&_rdr"><i class="bi bi-facebook fs-5"></i></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link py-0" href="#"><i class="bi bi-whatsapp fs-5"></i></a>
+                    <a class="nav-link py-0" href="https://web.whatsapp.com/"><i class="bi bi-whatsapp fs-5"></i></a>
                   </li>
                 </ul>
             </div>
