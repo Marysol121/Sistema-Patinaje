@@ -1,0 +1,25 @@
+{
+    "inscripciones": [
+        {
+            "id": 1,
+            "cedula": "0101234567",
+            "evento": "Campeonato Abierto de Patinaje de Carreras",
+            "categoria": "JUVENIL",
+            "pruebas": "8000m"
+        },
+        {
+            "id": 2,
+            "cedula": "0102345678",
+            "evento": "Selectivo Campeonato Nacional de Cadetes",
+            "categoria": "CADETES",
+            "pruebas": "3000m"
+        },
+        {
+            "id": 3,
+            "cedula": "0103456789",
+            "evento": "Torneo Infantil de Natación",
+            "categoria": "INFANTIL",
+            "pruebas": "500m"
+        }
+    ]
+}

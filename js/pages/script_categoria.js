@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    cargarDatosInicialesCategorias();
+    cargarDatosInicialesCategoriasF();
     const formularioCategoria = document.getElementById('formularioCategoria');
     formularioCategoria.addEventListener('submit', agregarCategoria);
 });
 
 let listaCategorias = [];
 
-function cargarDatosInicialesCategorias() {
+function cargarDatosInicialesCategoriasF() {
     fetch('/data/data_categorias.json')
         .then(response => response.json())
         .then(data => {

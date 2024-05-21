@@ -2,8 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     cargarDatosInicialesDeportistas();
     const formularioDeportista = document.getElementById('formularioDeportista');
     formularioDeportista.addEventListener('submit', agregarDeportista);
-    const cancelarFormulario = document.getElementById('cancelarFormulario');
-    cancelarFormulario.addEventListener('click', limpiarFormulario);
+    
 });
 
 let listaDeportistas = [];

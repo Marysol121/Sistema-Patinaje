@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    cargarDatosInicialesEventos();
-    cargarDatosInicialesCategorias();
-    cargarDatosInicialesPruebas();
+    cargarDatosInicialesEventosX();
+    cargarDatosInicialesCategoriasA();
+    cargarDatosInicialesPruebasA();
 
     const formularioEvento = document.getElementById('formularioEvento');
     formularioEvento.addEventListener('submit', agregarEventos);
@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 let listaEventos = [];
 
-function cargarDatosInicialesCategorias() {
+function cargarDatosInicialesCategoriasA() {
     fetch('/data/data_categorias.json')
         .then(response => response.json())
         .then(data => {
             const listaCategorias = data.dataCategorias;
-            const selectCategoria = document.getElementById('categoriaSelect');
+            const selectCategoria = document.getElementById('categoriaSelectN');
             
             selectCategoria.innerHTML = '<option value="" disabled selected>Seleccione una categoría</option>';
             
@@ -28,7 +28,7 @@ function cargarDatosInicialesCategorias() {
         .catch(error => console.error('Error al cargar los datos:', error));
 }
 
-function cargarDatosInicialesPruebas() {
+function cargarDatosInicialesPruebasA() {
     fetch('/data/data_pruebas.json')
         .then(response => response.json())
         .then(data => {
@@ -47,7 +47,8 @@ function cargarDatosInicialesPruebas() {
         .catch(error => console.error('Error al cargar los datos:', error));
 }
 
-function cargarDatosInicialesEventos() {
+function cargarDatosInicialesEventosX() {
+    
     fetch('/data/data_eventos.json')
         .then(response => response.json())
         .then(data => {

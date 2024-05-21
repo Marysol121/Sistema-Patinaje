@@ -1,0 +1,35 @@
+{
+    "ganador": [
+      {
+        "index": 1,
+        "cedula": "0101234567",
+        "evento": "Campeonato Abierto de Patinaje de Carreras",
+        "categoria": "JUVENIL",
+        "pruebas": "8000m",
+        "puntos1": 100,
+        "puntos2": 95,
+        "puntos3": 90
+      },
+      {
+        "index": 2,
+        "cedula": "0102345678",
+        "evento": "Selectivo Campeonato Nacional de Cadetes",
+        "categoria": "CADETES",
+        "pruebas": "3000m",
+        "puntos1": 98,
+        "puntos2": 92,
+        "puntos3": 89
+      },
+      {
+        "index": 3,
+        "cedula": "0103456789",
+        "evento": "Torneo Infantil de Natación",
+        "categoria": "INFANTIL",
+        "pruebas": "500m",
+        "puntos1": 95,
+        "puntos2": 91,
+        "puntos3": 87
+      }
+    ]
+  }
+  

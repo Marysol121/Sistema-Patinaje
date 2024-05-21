@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-    cargarDatosInicialesPruebas();
+    cargarDatosInicialesPruebasF();
     const formularioPrueba = document.getElementById('formularioPrueba');
     formularioPrueba.addEventListener('submit', agregarPrueba);
 });
 
-let listaPruebas = [];
+let listaPruebasCopia = [];
 
-function cargarDatosInicialesPruebas() {
-    fetch('/data/data_pruebas.json')
+function cargarDatosInicialesPruebasF() {
+    fetch('/data/data_pruebasCopy.json')
         .then(response => response.json())
         .then(data => {
-            listaPruebas = data.dataPruebas;
+            listaPruebasCopia = data.dataPruebas;
             actualizarTablaPruebas();
         })
         .catch(error => console.error('Error al cargar los datos:', error));
@@ -28,12 +28,12 @@ function agregarPrueba(event) {
     }
 
     const nuevaPrueba = {
-        id: listaPruebas.length + 1,
+        id: listaPruebasCopia.length + 1,
         nombre: nombre,
         descripcion: descripcion
     };
 
-    listaPruebas.push(nuevaPrueba);
+    listaPruebasCopia.push(nuevaPrueba);
     actualizarTablaPruebas();
 
     // Limpiar formulario
@@ -44,7 +44,7 @@ function agregarPrueba(event) {
 function actualizarTablaPruebas() {
     const tablaPruebas = document.getElementById('tabla-pruebas').querySelector('tbody');
     tablaPruebas.innerHTML = '';
-    listaPruebas.forEach(function(script_prueba, index) {
+    listaPruebasCopia.forEach(function(script_prueba, index) {
         const fila = document.createElement('tr');
         fila.innerHTML = `
             <td>${index + 1}</td>
